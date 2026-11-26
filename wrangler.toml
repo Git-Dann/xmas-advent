@@ -28,11 +28,8 @@ migrations_dir = "migrations"
 [env.preview.vars]
 ENVIRONMENT = "preview"
 
-[[env.preview.d1_databases]]
-binding = "DB"
-database_name = "the-25th-key-preview"
-database_id = "REPLACE_WITH_PREVIEW_D1_ID"
-migrations_dir = "migrations"
+# Preview deployments deliberately have NO database binding, so a preview can never read or
+# change Chloe's progress. Add a separate preview database here if previews are ever needed.
 
 # [[env.preview.r2_buckets]]
 # binding = "MEDIA"
