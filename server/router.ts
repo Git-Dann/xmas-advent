@@ -28,7 +28,7 @@ export async function handle(request: Request, env: Env): Promise<Response> {
 
     // ---------- Auth ----------
     if (path === '/api/auth/claim' && method === 'POST') {
-      await rateLimit(env, `claim:${clientIp(request)}`, 12, 900);
+      await rateLimit(env, `claim:${clientIp(request)}`, testLimits(env) ? 500 : 12, 900);
       const body = await readJson(request);
       const cookie = await claim(env, String(body.code ?? ''));
       return json({ ok: true }, 200, { 'Set-Cookie': cookie });
@@ -108,6 +108,11 @@ export async function handle(request: Request, env: Env): Promise<Response> {
   }
 }
 
+/** Rate limits are strict everywhere except automated-test environments (never production). */
+function testLimits(env: Env): boolean {
+  return !isProduction(env) && env.ALLOW_TEST_CLOCK === '1';
+}
+
 async function serveMedia(env: Env, id: string, allowed: (slot: string) => boolean): Promise<Response> {
   const row = await env.DB.prepare('SELECT slot, r2_key, content_type FROM media_assets WHERE id = ?').bind(id)
     .first<{ slot: string; r2_key: string; content_type: string }>();
@@ -127,7 +132,8 @@ async function serveMedia(env: Env, id: string, allowed: (slot: string) => boole
 
 async function handleAdmin(request: Request, env: Env, path: string, method: string, url: URL): Promise<Response> {
   if (path === '/api/admin/login' && method === 'POST') {
-    await rateLimit(env, `admin-login:${clientIp(request)}`, 10, 900);
+    // Strict in production. Relaxed only where the test clock is enabled (local automated tests).
+    await rateLimit(env, `admin-login:${clientIp(request)}`, testLimits(env) ? 500 : 10, 900);
     const body = await readJson(request);
     return json({ ok: true }, 200, { 'Set-Cookie': await adminLogin(env, String(body.password ?? '')) });
   }

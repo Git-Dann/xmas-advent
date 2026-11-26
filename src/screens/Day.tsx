@@ -84,7 +84,7 @@ export function DayScreen({ day }: { day: number }) {
   if (error) {
     return (
       <div className="day day-unavailable">
-        <Link to="/" className="back-link"><Glyph name="back" size={18} /> The Village</Link>
+        <Link to="/" className="back-link" onClick={() => void audio.play('ui.back')}><Glyph name="back" size={18} /> The Village</Link>
         <h1>{error.code === 'not_yet' ? 'Not yet' : error.code === 'locked' ? 'One at a time' : 'This door will not open'}</h1>
         <p className="lede">{error.message}</p>
         <Link to="/" className="btn btn-secondary">Back to the village</Link>
@@ -98,7 +98,7 @@ export function DayScreen({ day }: { day: number }) {
 
   return (
     <article className={`day day-${day} chapter-${puzzle.chapter}`} aria-labelledby="day-title">
-      <Link to="/" className="back-link"><Glyph name="back" size={18} /> The Village</Link>
+      <Link to="/" className="back-link" onClick={() => void audio.play('ui.back')}><Glyph name="back" size={18} /> The Village</Link>
       <header className="day-header">
         <p className="eyebrow">Day {day} · {formatDay(puzzle.date)}</p>
         <h1 id="day-title">{puzzle.title}</h1>
@@ -298,7 +298,7 @@ function RevealDialog({ reveal, day, onClose, onView }: { reveal: RevealView | n
           <Rewards reveal={reveal} onView={onView} />
           {day === 24 ? <ChristmasCountdown /> : null}
           <div className="reveal-actions">
-            <Button variant="paper" onClick={() => { onClose(); navigate('/'); }}>Back to the village</Button>
+            <Button variant="paper" sound="door.close" onClick={() => { onClose(); navigate('/'); }}>Back to the village</Button>
             {reveal.rewards.length > 0 ? <Button variant="quiet" onClick={() => { onClose(); navigate('/archive'); }}>Open the Archive</Button> : null}
           </div>
         </div>

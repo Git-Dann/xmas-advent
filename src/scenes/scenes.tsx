@@ -202,6 +202,10 @@ export function PostcardScene({ scene, onReady, ready }: SceneProps<'postcard'>)
   const [read, setRead] = useState(ready ? scene.layers.length : 0);
   const [steady, setSteady] = useState(false);
   const reduced = useReducedMotion();
+  useEffect(() => {
+    void audio.startAmbient('ambient.wind');
+    return () => void audio.startAmbient('ambient.winter');
+  }, []);
   function steadyIt() {
     if (read >= scene.layers.length) return;
     void audio.play('paper.rustle');

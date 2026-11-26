@@ -242,6 +242,7 @@ describe('the finale', () => {
     const finale = (await h.get('/api/finale')).json;
     expect(finale.unlocked).toBe(true);
     expect(finale.letter.join(' ')).toContain('Elephant Juice');
+    expect(finale.fullTitle).toBe('The 25th Key: The Story of Us');
     await h.setClock('2027-01-15T12:00:00Z');
     const cal = (await h.get('/api/calendar')).json;
     expect(cal.completedCount).toBe(25);
@@ -272,6 +273,19 @@ describe('admin isolation', () => {
     const cal = (await h.get('/api/calendar')).json;
     expect(cal.today).toBe('2026-12-01');
     expect(cal.days[1].state).toBe('future');
+  });
+  it('a tester code signs in as the preview player and never touches Chloe', async () => {
+    const h = new Harness();
+    await h.setClock('2026-12-01T09:00:00Z');
+    await h.adminLogin();
+    await h.post('/api/admin/preview/clock', { at: '2026-12-03T10:00:00Z' });
+    const { code } = (await h.post('/api/admin/codes', { label: 'Dan', player: 'preview' })).json;
+    h.cookies.delete('k25_admin');
+    expect((await h.claim(code)).status).toBe(200);
+    expect((await h.get('/api/session')).json.player.preview).toBe(true);
+    await solveThrough(h, 3);
+    const real = h.d1.db.prepare("SELECT COUNT(*) AS n FROM puzzle_progress WHERE player_id = 'player-real'").get() as { n: number };
+    expect(real.n).toBe(0);
   });
   it('the test clock is ignored in production', async () => {
     const h = new Harness({ ENVIRONMENT: 'production' });

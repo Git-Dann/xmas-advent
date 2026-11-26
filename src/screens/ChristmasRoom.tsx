@@ -36,7 +36,7 @@ export function ChristmasRoom() {
         <div className="christmas-glow" aria-hidden="true" />
       </div>
       <article className="paper christmas-letter" aria-labelledby="christmas-title">
-        <p className="record-kicker">Christmas morning, 2026</p>
+        <p className="record-kicker">{finale.fullTitle ?? 'Christmas morning, 2026'}</p>
         <h1 id="christmas-title">{finale.title}</h1>
         <div className="prose christmas-body">
           {finale.letter?.map((line, i) => <p key={i} style={{ animationDelay: `${600 + i * 450}ms` }}>{line}</p>)}

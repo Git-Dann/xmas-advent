@@ -14,11 +14,16 @@ export function Invitation() {
 
   useEffect(() => {
     // Invitation links carry the code in the fragment, which is never sent to the server or logs.
-    const match = /code=([A-Za-z0-9-]+)/.exec(location.hash);
-    if (match) {
-      setCode(match[1]!);
-      history.replaceState(null, '', location.pathname);
-    }
+    const read = () => {
+      const match = /code=([A-Za-z0-9-]+)/.exec(location.hash);
+      if (match) {
+        setCode(match[1]!);
+        history.replaceState(null, '', location.pathname);
+      }
+    };
+    read();
+    window.addEventListener('hashchange', read);
+    return () => window.removeEventListener('hashchange', read);
   }, []);
 
   async function submit(event: FormEvent) {
@@ -42,9 +47,9 @@ export function Invitation() {
     <main id="main" className="invitation">
       <div className="invitation-card">
         <Seal kind="star" size={88} className="invitation-seal" />
-        <p className="eyebrow">A private collection</p>
+        <p className="eyebrow">By invitation only</p>
         <h1 className="invitation-title">The 25th Key</h1>
-        <p className="invitation-subtitle">The Story of Us</p>
+        <p className="invitation-subtitle">An unfinished collection</p>
         <p className="invitation-line">Some stories are worth keeping.</p>
         <form className="invitation-form" onSubmit={submit}>
           <label htmlFor="invite-code" className="field-label">Your invitation code</label>

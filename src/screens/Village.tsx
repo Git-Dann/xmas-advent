@@ -116,7 +116,7 @@ export function VillageScreen() {
                     <span className="calendar-row-state">{STATE_LABEL[day.state]}</span>
                   </span>
                   {playable ? (
-                    <Link to={`/day/${day.day}`} className="btn btn-secondary btn-small" aria-label={`Open day ${day.day}`}>
+                    <Link to={`/day/${day.day}`} className="btn btn-secondary btn-small" aria-label={`${day.state === 'complete' ? 'Revisit' : 'Open'} day ${day.day}`}>
                       {day.state === 'complete' ? 'Revisit' : 'Open'}
                     </Link>
                   ) : null}

@@ -1,5 +1,37 @@
 {
-  "ui.tap": { "channel": "ui", "files": ["/assets/audio/ui/tap-1.m4a", "/assets/audio/ui/tap-2.m4a", "/assets/audio/ui/tap-3.m4a"], "gain": 0.6 },
-  "ui.error.soft": { "channel": "ui", "files": ["/assets/audio/ui/error-soft-1.m4a"], "gain": 0.5 },
-  "puzzle.correct": { "channel": "narrative", "files": ["/assets/audio/cues/correct-1.m4a"], "gain": 0.8 }
+  "ui.tap": { "channel": "ui", "files": ["/assets/audio/ui/click-1.m4a", "/assets/audio/ui/click-2.m4a", "/assets/audio/ui/tap-1.m4a"], "gain": 0.6 },
+  "ui.press": { "channel": "ui", "files": ["/assets/audio/ui/click-3.m4a", "/assets/audio/ui/press-1.m4a", "/assets/audio/ui/press-2.m4a"], "gain": 0.6 },
+  "ui.release": { "channel": "ui", "files": ["/assets/audio/ui/release-1.m4a", "/assets/audio/ui/release-2.m4a"], "gain": 0.5 },
+  "ui.open": { "channel": "ui", "files": ["/assets/audio/ui/open-1.m4a", "/assets/audio/fx/whoosh-2.m4a"], "gain": 0.5 },
+  "ui.close": { "channel": "ui", "files": ["/assets/audio/ui/close-1.m4a"], "gain": 0.5 },
+  "ui.back": { "channel": "ui", "files": ["/assets/audio/ui/back-1.m4a", "/assets/audio/ui/back-2.m4a"], "gain": 0.5 },
+  "ui.error.soft": { "channel": "ui", "files": ["/assets/audio/ui/error-soft-1.m4a", "/assets/audio/ui/error-soft-2.m4a", "/assets/audio/ui/undo-soft-1.m4a"], "gain": 0.35 },
+
+  "door.unlock": { "channel": "ui", "files": ["/assets/audio/fx/lock-release-1.m4a", "/assets/audio/fx/door-handle-1.m4a"], "gain": 0.6 },
+  "door.open": { "channel": "ui", "files": ["/assets/audio/fx/door-open-1.m4a"], "gain": 0.5 },
+  "door.close": { "channel": "ui", "files": ["/assets/audio/fx/door-close-1.m4a"], "gain": 0.6 },
+  "paper.rustle": { "channel": "ui", "files": ["/assets/audio/fx/paper-rustle-1.m4a", "/assets/audio/fx/paper-rustle-2.m4a", "/assets/audio/fx/paper-rustle-3.m4a"], "gain": 0.5 },
+  "letter.unfold": { "channel": "ui", "files": ["/assets/audio/fx/letter-unfold-1.m4a", "/assets/audio/fx/letter-unfold-2.m4a"], "gain": 0.55 },
+  "seal.break": { "channel": "ui", "files": ["/assets/audio/fx/seal-break-1.m4a"], "gain": 0.6 },
+  "object.pickup": { "channel": "ui", "files": ["/assets/audio/fx/key-pickup-1.m4a", "/assets/audio/fx/wood-tap-1.m4a"], "gain": 0.5 },
+  "object.rotate": { "channel": "ui", "files": ["/assets/audio/fx/whoosh-1.m4a", "/assets/audio/fx/whoosh-2.m4a"], "gain": 0.35 },
+  "object.place": { "channel": "ui", "files": ["/assets/audio/fx/wood-tap-1.m4a", "/assets/audio/fx/wood-tap-2.m4a", "/assets/audio/fx/wood-tap-3.m4a"], "gain": 0.55 },
+  "object.inspect": { "channel": "ui", "files": ["/assets/audio/ui/inspect-1.m4a", "/assets/audio/fx/paper-rustle-3.m4a"], "gain": 0.5 },
+  "dial.tick": { "channel": "ui", "files": ["/assets/audio/fx/dial-tick-1.m4a", "/assets/audio/fx/dial-tick-2.m4a", "/assets/audio/fx/dial-tick-3.m4a"], "gain": 0.5 },
+  "lock.engage": { "channel": "ui", "files": ["/assets/audio/fx/lock-engage-1.m4a", "/assets/audio/fx/lock-engage-2.m4a", "/assets/audio/fx/lock-engage-3.m4a"], "gain": 0.6 },
+  "lock.release": { "channel": "ui", "files": ["/assets/audio/fx/lock-release-1.m4a", "/assets/audio/fx/lock-release-2.m4a"], "gain": 0.6 },
+  "key.insert": { "channel": "ui", "files": ["/assets/audio/fx/key-insert-1.m4a", "/assets/audio/fx/key-insert-2.m4a"], "gain": 0.6 },
+  "key.turn": { "channel": "ui", "files": ["/assets/audio/fx/key-turn-1.m4a", "/assets/audio/fx/key-turn-2.m4a"], "gain": 0.6 },
+
+  "puzzle.correct": { "channel": "narrative", "files": ["/assets/audio/cues/correct-1.m4a", "/assets/audio/cues/correct-2.m4a", "/assets/audio/cues/musical-tap-2.m4a"], "gain": 0.8 },
+  "puzzle.complete": { "channel": "narrative", "files": ["/assets/audio/cues/success-1.m4a", "/assets/audio/cues/complete-1.m4a"], "gain": 0.8 },
+  "evidence.collect": { "channel": "narrative", "files": ["/assets/audio/cues/chime-1.m4a", "/assets/audio/cues/collect-1.m4a", "/assets/audio/cues/collect-2.m4a"], "gain": 0.7 },
+  "secret.reveal": { "channel": "narrative", "files": ["/assets/audio/cues/reveal-shimmer-1.m4a", "/assets/audio/cues/reveal-shimmer-2.m4a", "/assets/audio/cues/chime-2.m4a"], "gain": 0.7 },
+  "chapter.complete": { "channel": "narrative", "files": ["/assets/audio/cues/wind-chime-1.m4a", "/assets/audio/cues/complete-2.m4a"], "gain": 0.75 },
+  "key.earned": { "channel": "narrative", "files": ["/assets/audio/cues/musical-tap-1.m4a", "/assets/audio/cues/musical-tap-3.m4a"], "gain": 0.8 },
+  "christmas.reveal": { "channel": "narrative", "files": ["/assets/audio/cues/finale-music-box-1.m4a", "/assets/audio/cues/finale-sleigh-bells-1.m4a"], "gain": 0.85 },
+
+  "ambient.wind": { "channel": "ambient", "files": ["/assets/audio/ambient/wind-1.m4a", "/assets/audio/ambient/wind-2.m4a"], "loop": true, "gain": 0.5 },
+  "ambient.fireplace": { "channel": "ambient", "files": ["/assets/audio/ambient/fireplace-1.m4a", "/assets/audio/ambient/fireplace-2.m4a"], "loop": true, "gain": 0.55 },
+  "ambient.winter": { "channel": "ambient", "files": ["/assets/audio/ambient/winter-night-1.m4a", "/assets/audio/ambient/winter-night-2.m4a"], "loop": true, "gain": 0.45 }
 }

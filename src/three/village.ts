@@ -1,7 +1,8 @@
 import * as THREE from 'three';
 
 /**
- * The village: a stylised miniature diorama built from simple, reused geometry.
+ * The village: a stylised miniature diorama built from the Kenney Holiday Kit (CC0), with
+ * procedural geometry as a fallback if the models cannot load.
  * - 24 houses (one per day) ringed around a central Christmas tree (day 25).
  * - Instanced houses, roofs, windows, trees and tree lights: a handful of draw calls.
  * - Unlit emissive windows plus additive halos instead of real-time lights and shadows.
@@ -13,6 +14,8 @@ export type HouseState = 'future' | 'locked' | 'available' | 'in_progress' | 'co
 export interface VillageOptions {
   reducedMotion: boolean;
   onContextLost?: () => void;
+  /** Called once the houses and trees are in place (kit or fallback), so the canvas can fade in. */
+  onBuilt?: () => void;
   mode?: 'village' | 'christmas';
 }
 
@@ -28,8 +31,6 @@ const PALETTE = ['#6b2a3a', '#2d4a3c', '#d6c9b1', '#7f776d', '#4a1d2a', '#8f7444
 const WINDOW_DARK = new THREE.Color('#14201b');
 const WINDOW_WARM = new THREE.Color('#ffc56e');
 const WINDOW_GOLD = new THREE.Color('#ffe2a0');
-const HALO_OFF = new THREE.Color('#000000');
-const HALO_WARM = new THREE.Color('#ff9a3c');
 
 function radialTexture(inner: string, outer: string, size = 64): THREE.CanvasTexture {
   const canvas = document.createElement('canvas');
@@ -70,7 +71,7 @@ export function createVillage(canvas: HTMLCanvasElement, options: VillageOptions
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: false, powerPreference: 'low-power' });
   renderer.outputColorSpace = THREE.SRGBColorSpace;
   renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = options.mode === 'christmas' ? 1.15 : 1.0;
+  renderer.toneMappingExposure = options.mode === 'christmas' ? 1.25 : 1.12;
   let pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
   renderer.setPixelRatio(pixelRatio);
 
@@ -83,9 +84,9 @@ export function createVillage(canvas: HTMLCanvasElement, options: VillageOptions
   const target = new THREE.Vector3(0, -1.4, 0);
 
   // ---------- Light ----------
-  scene.add(new THREE.HemisphereLight('#5b7c9e', '#1a2420', 1.5));
-  scene.add(new THREE.AmbientLight('#3a3226', 0.6));
-  const moon = new THREE.DirectionalLight('#c3d2ff', 1.6);
+  scene.add(new THREE.HemisphereLight('#a9b8c8', '#3a2a20', 1.35));
+  scene.add(new THREE.AmbientLight('#5a4632', 0.55));
+  const moon = new THREE.DirectionalLight('#e2e8ff', 1.7);
   moon.position.set(-8, 12, -6);
   scene.add(moon);
   const treeLight = new THREE.PointLight('#ffb060', 0, 9, 1.6);
@@ -153,9 +154,7 @@ export function createVillage(canvas: HTMLCanvasElement, options: VillageOptions
   const windowMat = track(new THREE.MeshBasicMaterial({ toneMapped: false }));
   const windows = new THREE.InstancedMesh(windowGeo, windowMat, HOUSES * 3);
   const haloTex = track(radialTexture('rgba(255,255,255,1)', 'rgba(255,255,255,0)'));
-  const haloGeo = new THREE.BufferGeometry();
   const haloPos = new Float32Array(HOUSES * 3);
-  const haloCol = new Float32Array(HOUSES * 3);
   housePositions.forEach((p, i) => {
     const rot = new THREE.Euler(0, p.angle, 0);
     q.setFromEuler(rot);
@@ -180,12 +179,18 @@ export function createVillage(canvas: HTMLCanvasElement, options: VillageOptions
     const haloAt = new THREE.Vector3(p.x, p.h * 0.5, p.z).addScaledVector(out, p.d / 2 + 0.25);
     haloPos.set([haloAt.x, haloAt.y, haloAt.z], i * 3);
   });
-  haloGeo.setAttribute('position', new THREE.BufferAttribute(haloPos, 3));
-  haloGeo.setAttribute('color', new THREE.BufferAttribute(haloCol, 3));
-  track(haloGeo);
-  const haloMat = track(new THREE.PointsMaterial({ size: 2.2, map: haloTex, vertexColors: true, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.55 }));
-  const halos = new THREE.Points(haloGeo, haloMat);
-  scene.add(bodies, roofs, eaves, chimneys, windows, halos);
+  // Light spilling from windows: sprites (point sprites are size-limited on some mobile GPUs).
+  const haloWarmMat = track(new THREE.SpriteMaterial({ map: haloTex, color: '#ff9a3c', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.5 }));
+  const haloGoldMat = track(new THREE.SpriteMaterial({ map: haloTex, color: '#ffe2a0', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.55 }));
+  const haloSprites = housePositions.map((_, i) => {
+    const sprite = new THREE.Sprite(haloWarmMat);
+    sprite.position.fromArray(haloPos, i * 3);
+    sprite.scale.set(1.5, 1.5, 1);
+    sprite.visible = false;
+    scene.add(sprite);
+    return sprite;
+  });
+  scene.add(bodies, roofs, eaves, chimneys, windows);
 
   // ---------- Trees around the rim ----------
   const coneGeo = track(new THREE.ConeGeometry(1, 1, 7));
@@ -309,6 +314,141 @@ export function createVillage(canvas: HTMLCanvasElement, options: VillageOptions
   snow.frustumCulled = false;
   scene.add(snow);
 
+  // ---------- Kenney Holiday Kit (CC0) ----------
+  // The procedural houses and trees above are the fallback. They stay hidden while the kit
+  // loads, and are shown only if loading fails, so the village never pops between styles.
+  const proceduralTree = tree.children.filter((child) => child !== bulbs && child !== star && child !== starHalo);
+  const procedural: THREE.Object3D[] = [bodies, roofs, eaves, chimneys, pines, pineCaps, ...proceduralTree];
+  procedural.forEach((o) => (o.visible = false));
+  let kitLoaded = false;
+  const kitMeshes: THREE.InstancedMesh[] = [];
+  let kitMaterial: THREE.Material | null = null;
+
+  import('./kit')
+    .then(({ loadKit }) => loadKit())
+    .then((kit) => {
+      if (disposed) {
+        Object.values(kit.geometries).forEach((g) => g.dispose());
+        kit.material.dispose();
+        return;
+      }
+      kitMaterial = kit.material;
+      const placements = new Map<string, THREE.Matrix4[]>();
+      const place = (piece: string, matrix: THREE.Matrix4) => {
+        const list = placements.get(piece) ?? [];
+        list.push(matrix.clone());
+        placements.set(piece, list);
+      };
+      const local = (x: number, y: number, z: number, rotY: number, scale = 1) =>
+        new THREE.Matrix4().compose(new THREE.Vector3(x, y, z), new THREE.Quaternion().setFromEuler(new THREE.Euler(0, rotY, 0)), new THREE.Vector3(scale, scale, scale));
+      const HOUSE_SCALE = 0.82;
+      const fronts = ['cabin-window-a', 'cabin-doorway', 'cabin-window-c', 'cabin-window-b'];
+      const hidden = new THREE.Matrix4().makeScale(0, 0, 0);
+
+      housePositions.forEach((p, i) => {
+        // Fronts face the Christmas tree, so lit doorways read across the square.
+        const house = local(p.x, 0, p.z, p.angle + Math.PI, HOUSE_SCALE);
+        const at = (m2: THREE.Matrix4) => house.clone().multiply(m2);
+        const front = fronts[i % fronts.length]!;
+        const sideWindow = i % 2 === 0;
+        place(front, at(local(0, 0, 0, 0)));
+        const backWindow = i % 5 !== 2;
+        place(backWindow ? (i % 2 ? 'cabin-window-c' : 'cabin-window-a') : 'cabin-wall-wreath', at(local(0, 0, 0, Math.PI)));
+        place(sideWindow ? 'cabin-window-b' : 'cabin-wall', at(local(0, 0, 0, Math.PI / 2)));
+        place('cabin-wall', at(local(0, 0, 0, -Math.PI / 2)));
+        for (let c = 0; c < 4; c++) place('cabin-corner-logs', at(local(0, 0, 0, (c * Math.PI) / 2)));
+        place('cabin-roof-snow-point', at(local(0, 1, 0, 0)));
+        place('cabin-wall-roof-center', at(local(0, 1, 0, 0)));
+        place('cabin-wall-roof-center', at(local(0, 1, 0, Math.PI)));
+        // Window glow sits just inside each opening, so it shows through the frame.
+        const doorway = front === 'cabin-doorway';
+        const glowFront = local(0, doorway ? 0.45 : 0.55, 0.69, 0).multiply(new THREE.Matrix4().makeScale(1.8, doorway ? 2.7 : 1.75, 1));
+        windows.setMatrixAt(i * 3, at(glowFront));
+        windows.setMatrixAt(i * 3 + 1, sideWindow ? at(local(0, 0, 0, Math.PI / 2).multiply(local(0, 0.55, 0.69, 0)).multiply(new THREE.Matrix4().makeScale(1.8, 1.75, 1))) : hidden);
+        windows.setMatrixAt(i * 3 + 2, backWindow ? at(local(0, 0, 0, Math.PI).multiply(local(0, 0.55, 0.69, 0)).multiply(new THREE.Matrix4().makeScale(1.8, 1.75, 1))) : hidden);
+        haloSprites[i]!.position.copy(new THREE.Vector3(0, 0.55, 1.15).applyMatrix4(house));
+      });
+      windows.instanceMatrix.needsUpdate = true;
+
+      // Snowy pines around the rim.
+      const RIM_TREES = 40;
+      for (let i = 0; i < RIM_TREES; i++) {
+        const a = (i / RIM_TREES) * Math.PI * 2 + rand() * 0.06;
+        const r = 6.55 + rand() * 0.45;
+        place(['tree-snow-a', 'tree-snow-b', 'tree-snow-c'][i % 3]!, local(Math.sin(a) * r, 0, Math.cos(a) * r, rand() * Math.PI * 2, 0.75 + rand() * 0.55));
+      }
+      // The Christmas tree at the centre (Day 25).
+      const TREE_SCALE = 1.75;
+      place('tree-decorated-snow', local(0, 0, 0, 0.4, TREE_SCALE));
+      for (let i = 0; i < LIGHTS; i++) {
+        const t = i / LIGHTS;
+        const y = 0.3 + t * 3.3;
+        const radius = 1.02 * (1 - t) + 0.08;
+        const a = t * Math.PI * 2 * 6.5;
+        bulbs.setMatrixAt(i, m.compose(v.set(Math.cos(a) * radius, y, Math.sin(a) * radius), q.identity(), s.set(1, 1, 1)));
+      }
+      bulbs.instanceMatrix.needsUpdate = true;
+      starHalo.position.set(0, 2.29 * TREE_SCALE - 0.05, 0);
+
+      // Lanterns along the lane between the two rings, always softly lit.
+      const lanternTops: number[] = [];
+      for (let i = 0; i < 8; i++) {
+        const a = (i / 8) * Math.PI * 2 + Math.PI / 16;
+        const r = 4.45;
+        place('lantern', local(Math.sin(a) * r, 0, Math.cos(a) * r, a, 0.5));
+        lanternTops.push(Math.sin(a) * r, 0.78, Math.cos(a) * r);
+      }
+      const lanternMat = track(new THREE.SpriteMaterial({ map: haloTex, color: '#ffb35c', transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, opacity: 0.55 }));
+      for (let i = 0; i < lanternTops.length; i += 3) {
+        const glow = new THREE.Sprite(lanternMat);
+        glow.position.set(lanternTops[i]!, lanternTops[i + 1]!, lanternTops[i + 2]!);
+        glow.scale.set(0.9, 0.9, 1);
+        scene.add(glow);
+      }
+
+      // A few quiet details.
+      place('snowman-hat', local(Math.sin(3.7) * 2.0, 0, Math.cos(3.7) * 2.0, 3.7, 0.7));
+      place('sled', local(Math.sin(0.9) * 1.9, 0, Math.cos(0.9) * 1.9, 2.2, 0.8));
+      place('reindeer', local(Math.sin(1.35) * 2.05, 0, Math.cos(1.35) * 2.05, 2.6, 0.85));
+      for (let i = 0; i < 10; i++) {
+        const a = rand() * Math.PI * 2;
+        place('snow-pile', local(Math.sin(a) * (2.2 + rand() * 4), 0, Math.cos(a) * (2.2 + rand() * 4), rand() * 6, 0.6 + rand() * 0.6));
+      }
+      for (let i = 0; i < 4; i++) {
+        const a = rand() * Math.PI * 2;
+        place('rocks-small', local(Math.sin(a) * 6.1, 0, Math.cos(a) * 6.1, rand() * 6, 0.5));
+      }
+      if (options.mode === 'christmas') {
+        const gifts = ['present-a-cube', 'present-b-round', 'present-a-rectangle', 'present-b-cube'];
+        for (let i = 0; i < 9; i++) {
+          const a = (i / 9) * Math.PI * 2 + 0.2;
+          const r = 1.25 + (i % 2) * 0.3;
+          place(gifts[i % gifts.length]!, local(Math.sin(a) * r, 0, Math.cos(a) * r, a * 1.7, 0.9 + (i % 3) * 0.15));
+        }
+      }
+
+      for (const [piece, matrices] of placements) {
+        const geometry = kit.geometries[piece as keyof typeof kit.geometries];
+        if (!geometry) continue;
+        const mesh = new THREE.InstancedMesh(geometry, kit.material, matrices.length);
+        matrices.forEach((matrix, index) => mesh.setMatrixAt(index, matrix));
+        mesh.instanceMatrix.needsUpdate = true;
+        scene.add(mesh);
+        kitMeshes.push(mesh);
+      }
+      // Geometries that were loaded but not placed (for example presents outside Christmas).
+      for (const [piece, geometry] of Object.entries(kit.geometries)) if (!placements.has(piece)) geometry.dispose();
+      kitLoaded = true;
+    })
+    .catch(() => {
+      procedural.forEach((o) => (o.visible = true));
+    })
+    .finally(() => {
+      if (disposed) return;
+      applyStates();
+      options.onBuilt?.();
+    });
+
   // ---------- State ----------
   let states: HouseState[] = Array(25).fill('future');
   let hasKey = false;
@@ -331,18 +471,20 @@ export function createVillage(canvas: HTMLCanvasElement, options: VillageOptions
       const lit = st === 'complete' || options.mode === 'christmas';
       const colour = lit ? WINDOW_WARM : st === 'available' || st === 'in_progress' ? WINDOW_GOLD : WINDOW_DARK;
       for (let k = 0; k < 3; k++) windows.setColorAt(i * 3 + k, colour);
-      const halo = lit ? HALO_WARM : st === 'available' || st === 'in_progress' ? WINDOW_GOLD : HALO_OFF;
-      haloCol.set([halo.r, halo.g, halo.b], i * 3);
+      const sprite = haloSprites[i]!;
+      sprite.visible = lit || st === 'available' || st === 'in_progress';
+      sprite.material = lit ? haloWarmMat : haloGoldMat;
     }
     if (windows.instanceColor) windows.instanceColor.needsUpdate = true;
-    (haloGeo.getAttribute('color') as THREE.BufferAttribute).needsUpdate = true;
     const ratio = options.mode === 'christmas' ? 1 : complete / 24;
     const litBulbs = Math.round(ratio * LIGHTS);
     for (let i = 0; i < LIGHTS; i++) bulbs.setColorAt(i, i < litBulbs ? bulbPalette[i % bulbPalette.length]! : WINDOW_DARK);
     if (bulbs.instanceColor) bulbs.instanceColor.needsUpdate = true;
     treeLight.intensity = 0.4 + ratio * (options.mode === 'christmas' ? 6 : 3);
-    star.visible = hasKey || options.mode === 'christmas';
-    starHalo.visible = star.visible;
+    // The kit's decorated tree has its own star; ours is only used by the procedural fallback.
+    const showStar = hasKey || options.mode === 'christmas';
+    star.visible = showStar && !kitLoaded;
+    starHalo.visible = showStar;
     render();
   }
 
@@ -460,6 +602,12 @@ export function createVillage(canvas: HTMLCanvasElement, options: VillageOptions
       canvas.removeEventListener('webglcontextlost', onLost);
       for (const item of disposables) item.dispose();
       for (const mesh of [bodies, roofs, eaves, chimneys, windows, pines, pineCaps, bulbs, drifts]) mesh.dispose();
+      for (const mesh of kitMeshes) {
+        mesh.geometry.dispose();
+        mesh.dispose();
+      }
+      kitMaterial?.dispose();
+      (kitMaterial as THREE.MeshStandardMaterial | null)?.map?.dispose();
       renderer.dispose();
     },
   };

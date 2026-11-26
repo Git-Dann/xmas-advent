@@ -110,7 +110,10 @@ function Wheel({ value, onChange, label, size = 'large' }: { value: number; onCh
             void audio.play('dial.tick');
           }
         }}
-        onPointerUp={() => (drag.current = null)}
+        onPointerUp={() => {
+          if (drag.current) void audio.play('ui.release');
+          drag.current = null;
+        }}
         onPointerCancel={() => (drag.current = null)}
       >
         <span className="wheel-digit wheel-prev" aria-hidden="true">{(value + 9) % 10}</span>

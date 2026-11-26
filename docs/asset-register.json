@@ -1,0 +1,798 @@
+[
+  {
+    "name": "soundkit UI and cue sounds (THISUX)",
+    "creator": "THISUX Private Limited",
+    "sourceUrl": "https://github.com/thisuxhq/soundkit",
+    "licence": "MIT",
+    "licenceUrl": "https://github.com/thisuxhq/soundkit/blob/main/LICENSE",
+    "downloadDate": "2026-11-26",
+    "attribution": "soundkit, Copyright (c) 2026 THISUX Private Limited, MIT License (full licence text in public/assets/NOTICES.txt)",
+    "permittedUsage": "MIT: use, copy, modify, merge, publish, distribute, sublicense and sell, provided the copyright notice and permission notice are included.",
+    "originalFileSize": 199059,
+    "optimisedFileSize": 84238,
+    "localPaths": [
+      "/assets/audio/ui/back-1.m4a",
+      "/assets/audio/ui/back-2.m4a",
+      "/assets/audio/ui/close-1.m4a",
+      "/assets/audio/ui/error-soft-1.m4a",
+      "/assets/audio/ui/error-soft-2.m4a",
+      "/assets/audio/ui/inspect-1.m4a",
+      "/assets/audio/ui/open-1.m4a",
+      "/assets/audio/ui/press-1.m4a",
+      "/assets/audio/ui/press-2.m4a",
+      "/assets/audio/ui/release-1.m4a",
+      "/assets/audio/ui/release-2.m4a",
+      "/assets/audio/ui/tap-1.m4a",
+      "/assets/audio/ui/tap-2.m4a",
+      "/assets/audio/ui/tap-3.m4a",
+      "/assets/audio/cues/collect-1.m4a",
+      "/assets/audio/cues/collect-2.m4a",
+      "/assets/audio/cues/collect-3.m4a",
+      "/assets/audio/cues/complete-1.m4a",
+      "/assets/audio/cues/complete-2.m4a",
+      "/assets/audio/cues/correct-1.m4a",
+      "/assets/audio/cues/correct-2.m4a"
+    ],
+    "modifications": "DSP-generated sounds (not recordings) from the soundkit repository; selected files renamed, mono, trimmed, loudness-normalised and re-encoded AAC .m4a, metadata stripped (previous sourcing run). originalFileSize is the whole downloaded soundkit \"full\" folder."
+  },
+  {
+    "name": "!Boring Sound Kit (18 sounds: Button Clicks, Natural Taps, Musical Taps, Whoosh, Success, Failed/Undo, Atmosphere)",
+    "creator": "Not Boring Software",
+    "sourceUrl": "https://notbor.ing/soundkit (linked from https://notbor.ing/words/the-sound-of-software; public Notion page andyworksco.notion.site/Boring-Sounds-d92a136378114eceb1898313acb673f0, file \"!Boring Sound Kit.zip\")",
+    "licence": "CC BY-NC-SA 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "Sounds from the \"!Boring Sound Kit\" by Not Boring Software (https://notbor.ing/soundkit), licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). These files have been modified (trimmed, normalised and converted) and are distributed under the same CC BY-NC-SA 4.0 licence.",
+    "permittedUsage": "Non-commercial use only (owner confirmed this is a private, personal, non-commercial one-time gift). Attribution, indication of changes and ShareAlike (adapted files stay CC BY-NC-SA 4.0) required. Must not be used in anything sold or monetised.",
+    "originalFileSize": 3768784,
+    "optimisedFileSize": 213740,
+    "localPaths": [
+      "/assets/audio/ui/click-1.m4a",
+      "/assets/audio/ui/click-2.m4a",
+      "/assets/audio/ui/click-3.m4a",
+      "/assets/audio/fx/dial-tick-1.m4a",
+      "/assets/audio/fx/dial-tick-2.m4a",
+      "/assets/audio/fx/dial-tick-3.m4a",
+      "/assets/audio/fx/wood-tap-1.m4a",
+      "/assets/audio/fx/wood-tap-2.m4a",
+      "/assets/audio/fx/wood-tap-3.m4a",
+      "/assets/audio/fx/whoosh-1.m4a",
+      "/assets/audio/fx/whoosh-2.m4a",
+      "/assets/audio/cues/musical-tap-1.m4a",
+      "/assets/audio/cues/musical-tap-2.m4a",
+      "/assets/audio/cues/musical-tap-3.m4a",
+      "/assets/audio/cues/success-1.m4a",
+      "/assets/audio/cues/reveal-shimmer-1.m4a",
+      "/assets/audio/cues/reveal-shimmer-2.m4a",
+      "/assets/audio/ui/undo-soft-1.m4a"
+    ],
+    "modifications": "Source WAVs (44.1 kHz stereo, from the official zip, which contained no licence/readme file) trimmed of silence, mixed to mono, short fades, loudness-normalised (approx. -18 LUFS; fail.wav to -24 LUFS), converted to AAC .m4a 96 kbps, metadata stripped, renamed. Mapping: button-1.wav -> /assets/audio/ui/click-1.m4a; button-2.wav -> /assets/audio/ui/click-2.m4a; button-3.wav -> /assets/audio/ui/click-3.m4a; button-4.wav -> /assets/audio/fx/dial-tick-1.m4a; button-5.wav -> /assets/audio/fx/dial-tick-2.m4a; button-6.wav -> /assets/audio/fx/dial-tick-3.m4a; natural-tap-1.wav -> /assets/audio/fx/wood-tap-1.m4a; natural-tap-2.wav -> /assets/audio/fx/wood-tap-2.m4a; natural-tap-3.wav -> /assets/audio/fx/wood-tap-3.m4a; whoosh-1.wav -> /assets/audio/fx/whoosh-1.m4a; whoosh-2.wav -> /assets/audio/fx/whoosh-2.m4a; musical-tap-1.wav -> /assets/audio/cues/musical-tap-1.m4a; musical-tap-2.wav -> /assets/audio/cues/musical-tap-2.m4a; musical-tap-3.wav -> /assets/audio/cues/musical-tap-3.m4a; success.wav -> /assets/audio/cues/success-1.m4a; atmosphere-1.wav -> /assets/audio/cues/reveal-shimmer-1.m4a; atmostphere-2.wav -> /assets/audio/cues/reveal-shimmer-2.m4a; fail.wav -> /assets/audio/ui/undo-soft-1.m4a. originalFileSize is the sum of the 18 WAVs (zip 2,340,540 bytes)."
+  },
+  {
+    "name": "Howling wind.ogg",
+    "creator": "Tvabutzku1234",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Howling_wind.ogg",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 1112243,
+    "optimisedFileSize": 485051,
+    "localPaths": [
+      "/assets/audio/ambient/wind-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original; excerpt of 30-34 s cut, mixed to mono, 44.1 kHz, tail crossfaded into head (1.5 s) for a seamless loop, loudness-normalised (approx. -28 to -35 LUFS, light peak limiting), encoded AAC 128 kbps .m4a, metadata stripped."
+  },
+  {
+    "name": "Killiney Hill Storm Floris 20250804 1537.ogg",
+    "creator": "Karlunun",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Killiney_Hill_Storm_Floris_20250804_1537.ogg",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 1160895,
+    "optimisedFileSize": 486568,
+    "localPaths": [
+      "/assets/audio/ambient/wind-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original; excerpt of 30-34 s cut, mixed to mono, 44.1 kHz, tail crossfaded into head (1.5 s) for a seamless loop, loudness-normalised (approx. -28 to -35 LUFS, light peak limiting), encoded AAC 128 kbps .m4a, metadata stripped."
+  },
+  {
+    "name": "Campfire sound ambience.ogg",
+    "creator": "Glaneur de sons",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Campfire_sound_ambience.ogg",
+    "licence": "CC BY 3.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"Campfire sound ambience\" by Glaneur de sons (via Freesound), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Campfire_sound_ambience.ogg. Modified (excerpted, looped, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 554608,
+    "optimisedFileSize": 588519,
+    "localPaths": [
+      "/assets/audio/ambient/fireplace-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original; excerpt of 30-34 s cut, mixed to mono, 44.1 kHz, tail crossfaded into head (1.5 s) for a seamless loop, loudness-normalised (approx. -28 to -35 LUFS, light peak limiting), encoded AAC 128 kbps .m4a, metadata stripped."
+  },
+  {
+    "name": "Dry grass burning in open fireplace.ogg",
+    "creator": "ezwa",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Dry_grass_burning_in_open_fireplace.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 511116,
+    "optimisedFileSize": 484017,
+    "localPaths": [
+      "/assets/audio/ambient/fireplace-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original; excerpt of 30-34 s cut, mixed to mono, 44.1 kHz, tail crossfaded into head (1.5 s) for a seamless loop, loudness-normalised (approx. -28 to -35 LUFS, light peak limiting), encoded AAC 128 kbps .m4a, metadata stripped."
+  },
+  {
+    "name": "Tawny owl calling at night in Tuntorp, Brastad, Sweden.ogg",
+    "creator": "W.carter",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tawny_owl_calling_at_night_in_Tuntorp,_Brastad,_Sweden.ogg",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"Tawny owl calling at night in Tuntorp, Brastad, Sweden\" by W.carter, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tawny_owl_calling_at_night_in_Tuntorp,_Brastad,_Sweden.ogg. Modified (excerpted, looped, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 21603448,
+    "optimisedFileSize": 1006049,
+    "localPaths": [
+      "/assets/audio/ambient/winter-night-1.m4a",
+      "/assets/audio/ambient/winter-night-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original; excerpt of 30-34 s cut, mixed to mono, 44.1 kHz, tail crossfaded into head (1.5 s) for a seamless loop, loudness-normalised (approx. -28 to -35 LUFS, light peak limiting), encoded AAC 128 kbps .m4a, metadata stripped. Two excerpts (from 102 s and 172 s)."
+  },
+  {
+    "name": "Turning a page.ogg",
+    "creator": "planish",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turning_a_page.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 49558,
+    "optimisedFileSize": 11726,
+    "localPaths": [
+      "/assets/audio/fx/letter-unfold-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Book paper pages assorted.ogg",
+    "creator": "stephan",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Book_paper_pages_assorted.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 2474211,
+    "optimisedFileSize": 54078,
+    "localPaths": [
+      "/assets/audio/fx/paper-rustle-1.m4a",
+      "/assets/audio/fx/paper-rustle-2.m4a",
+      "/assets/audio/fx/paper-rustle-3.m4a",
+      "/assets/audio/fx/letter-unfold-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped. Four short excerpts."
+  },
+  {
+    "name": "Tearing off small strip.ogg",
+    "creator": "stephan",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tearing_off_small_strip.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 47757,
+    "optimisedFileSize": 18420,
+    "localPaths": [
+      "/assets/audio/fx/seal-break-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "342618 spacejoe lock-1-close-lock-3.wav",
+    "creator": "SpaceJoe",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:342618_spacejoe_lock-1-close-lock-3.wav",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 319576,
+    "optimisedFileSize": 4709,
+    "localPaths": [
+      "/assets/audio/fx/lock-engage-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "342701 spacejoe lock-3-close-lock-1.wav",
+    "creator": "SpaceJoe",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:342701_spacejoe_lock-3-close-lock-1.wav",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 200792,
+    "optimisedFileSize": 6101,
+    "localPaths": [
+      "/assets/audio/fx/lock-engage-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "342675 spacejoe lock-2-close-lock-1.wav",
+    "creator": "SpaceJoe",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:342675_spacejoe_lock-2-close-lock-1.wav",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 233560,
+    "optimisedFileSize": 5447,
+    "localPaths": [
+      "/assets/audio/fx/lock-engage-3.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "342706 spacejoe lock-3-open-lock-3.wav",
+    "creator": "SpaceJoe",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:342706_spacejoe_lock-3-open-lock-3.wav",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 94296,
+    "optimisedFileSize": 2172,
+    "localPaths": [
+      "/assets/audio/fx/lock-release-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Lock (Gravity Sound).wav",
+    "creator": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lock_(Gravity_Sound).wav",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"lock\" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Lock_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 100452,
+    "optimisedFileSize": 6092,
+    "localPaths": [
+      "/assets/audio/fx/lock-release-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Lock 2 (Gravity Sound).wav",
+    "creator": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lock_2_(Gravity_Sound).wav",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"lock 2\" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Lock_2_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 133560,
+    "optimisedFileSize": 7467,
+    "localPaths": [
+      "/assets/audio/fx/key-insert-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Keys shaking (Gravity Sound).wav",
+    "creator": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Keys_shaking_(Gravity_Sound).wav",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"keys shaking\" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Keys_shaking_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 1182304,
+    "optimisedFileSize": 9562,
+    "localPaths": [
+      "/assets/audio/fx/key-insert-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Key item pick up 2 (Gravity Sound).wav",
+    "creator": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Key_item_pick_up_2_(Gravity_Sound).wav",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"key item pick up 2\" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Key_item_pick_up_2_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 67324,
+    "optimisedFileSize": 4387,
+    "localPaths": [
+      "/assets/audio/fx/key-pickup-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Tight door lock (Gravity Sound).wav",
+    "creator": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tight_door_lock_(Gravity_Sound).wav",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"tight door lock\" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tight_door_lock_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 530990,
+    "optimisedFileSize": 13041,
+    "localPaths": [
+      "/assets/audio/fx/key-turn-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Tight door lock 2 (Gravity Sound).wav",
+    "creator": "Gravity Sound",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tight_door_lock_2_(Gravity_Sound).wav",
+    "licence": "CC BY 4.0",
+    "licenceUrl": "https://creativecommons.org/licenses/by/4.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "\"tight door lock 2\" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tight_door_lock_2_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).",
+    "permittedUsage": "CC BY: use, modification and redistribution (including commercial) permitted with attribution and indication of changes.",
+    "originalFileSize": 530988,
+    "optimisedFileSize": 13043,
+    "localPaths": [
+      "/assets/audio/fx/key-turn-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Squeaky door.ogg",
+    "creator": "leonmire",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Squeaky_door.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 96166,
+    "optimisedFileSize": 41883,
+    "localPaths": [
+      "/assets/audio/fx/door-open-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Closing an old door.ogg",
+    "creator": "ezwa",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Closing_an_old_door.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 82246,
+    "optimisedFileSize": 16841,
+    "localPaths": [
+      "/assets/audio/fx/door-close-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Door handle creaking.ogg",
+    "creator": "stephan",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Door_handle_creaking.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 145741,
+    "optimisedFileSize": 17335,
+    "localPaths": [
+      "/assets/audio/fx/door-handle-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Watch tick.ogg",
+    "creator": "Marble Toast",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Watch_tick.ogg",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 12903,
+    "optimisedFileSize": 2677,
+    "localPaths": [
+      "/assets/audio/fx/dial-tick-4.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Chime.wav",
+    "creator": "Walechon24",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chime.wav",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 198956,
+    "optimisedFileSize": 7505,
+    "localPaths": [
+      "/assets/audio/cues/chime-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Chime (1) Sample.wav",
+    "creator": "UnKnownrNone",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chime_(1)_Sample.wav",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 133754,
+    "optimisedFileSize": 17915,
+    "localPaths": [
+      "/assets/audio/cues/chime-2.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped."
+  },
+  {
+    "name": "Windglockenspiel.Koshi.ogg",
+    "creator": "Membeth.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Windglockenspiel.Koshi.ogg",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 1420891,
+    "optimisedFileSize": 86304,
+    "localPaths": [
+      "/assets/audio/cues/wind-chime-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped. 7 s excerpt from 23.8 s, 2 s fade-out."
+  },
+  {
+    "name": "Stille Nacht.ogg",
+    "creator": "unbekannt, tot seit \u00fcber 70 Jahren",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Stille_Nacht.ogg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 396278,
+    "optimisedFileSize": 148659,
+    "localPaths": [
+      "/assets/audio/cues/finale-music-box-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped. 12 s excerpt from the start, 2.5 s fade-out. Recording of an antique Polyphon music-box disc (c. 1880) playing \"Silent Night\" (Gruber, public domain)."
+  },
+  {
+    "name": "Sleigh bells.wav",
+    "creator": "The Midnite Wolf",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Sleigh_bells.wav",
+    "licence": "CC0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 1302830,
+    "optimisedFileSize": 94916,
+    "localPaths": [
+      "/assets/audio/cues/finale-sleigh-bells-1.m4a"
+    ],
+    "modifications": "Downloaded as Wikimedia Commons MP3 transcode of the original (originals were rate-limited); trimmed, silence removed, mixed to mono, resampled to 44.1 kHz, short fades added, loudness-normalised (approx. -18 LUFS one-shots / -28 to -32 LUFS loops, light peak limiting where needed), encoded AAC .m4a, metadata stripped. First 8 s, 1.2 s fade-out."
+  },
+  {
+    "name": "Engraving: red-squirrel",
+    "creator": "Bibliographisches Institut",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meyers_b11_s0979a.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Meyers_b11_s0979a.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 824206,
+    "optimisedFileSize": 251710,
+    "localPaths": [
+      "/assets/engravings/red-squirrel.webp"
+    ],
+    "modifications": "Plate \"Nagetiere I\", Meyers Konversations-Lexikon 4th ed. (1885-90), vol. 11; panel \"Eichhorn (Sciurus vulgaris)\"; the two smaller squirrels at right were removed. Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: robin",
+    "creator": "Plate printer Joseph M. Kornheim (1810-1896) published by Frederick Warne & Co.",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Book_Illustration_of_a_Robin_and_Wren.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Book_Illustration_of_a_Robin_and_Wren.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 88652,
+    "optimisedFileSize": 26324,
+    "localPaths": [
+      "/assets/engravings/robin.webp"
+    ],
+    "modifications": "Robin and wren book illustration, 1871 (plate printer Joseph M. Kornheim, Frederick Warne & Co.); upper bird (robin) cropped; source image is only 553 px wide so the result is small (285x240). Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: owl",
+    "creator": "various",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meyers_b5_s0905a.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Meyers_b5_s0905a.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 733607,
+    "optimisedFileSize": 131764,
+    "localPaths": [
+      "/assets/engravings/owl.webp"
+    ],
+    "modifications": "Plate \"Eulen\", Meyers Konversations-Lexikon 4th ed. (1885-90), vol. 5; panel \"Waldkauz (Syrnium aluco)\" (tawny owl). Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: hare",
+    "creator": "various",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Die_Gartenlaube_(1871)_b_645.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Die_Gartenlaube_(1871)_b_645.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 1865275,
+    "optimisedFileSize": 291238,
+    "localPaths": [
+      "/assets/engravings/hare.webp"
+    ],
+    "modifications": "Wood engraving after Guido Hammer, Die Gartenlaube 1871 p. 645; running hare cropped (dog in background excluded). Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: fox",
+    "creator": "Unknown engraver",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:AmCyc_Fox_-_European_Fox.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:AmCyc_Fox_-_European_Fox.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 403031,
+    "optimisedFileSize": 131688,
+    "localPaths": [
+      "/assets/engravings/fox.webp"
+    ],
+    "modifications": "European fox, The American Cyclopaedia vol. 7 (1879) p. 359; cropped to the fox (prey at the bottom of the original excluded); lower alpha cut-off to drop print show-through from the reverse page. Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: hedgehog",
+    "creator": "Butterworth and Heath",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:EB1911_-_Hedgehog.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:EB1911_-_Hedgehog.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 336625,
+    "optimisedFileSize": 239106,
+    "localPaths": [
+      "/assets/engravings/hedgehog.webp"
+    ],
+    "modifications": "Hedgehog engraving by Butterworth & Heath, Encyclopaedia Britannica 11th ed. (1911), vol. 13. Note: published 1911 (early 20th century), engraved in the 19th-century line style. Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: deer",
+    "creator": "Unknown",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Meyers_b8_s0565a.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Meyers_b8_s0565a.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 727894,
+    "optimisedFileSize": 135056,
+    "localPaths": [
+      "/assets/engravings/deer.webp"
+    ],
+    "modifications": "Plate \"Hirsche\", Meyers Konversations-Lexikon 4th ed. (1885-90), vol. 8; panel \"Renntier (Rangifer tarandus)\" (reindeer, antlered); neighbouring figures (Axis deer legs, Sami herder and tent) whited out. Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: elephant",
+    "creator": "Unknown engraver",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:PSM_V02_D156_Asiatic_elephant.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:PSM_V02_D156_Asiatic_elephant.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 354367,
+    "optimisedFileSize": 231160,
+    "localPaths": [
+      "/assets/engravings/elephant.webp"
+    ],
+    "modifications": "Head and trunk of an Asiatic elephant, Popular Science Monthly vol. 2 (1872-73). Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Engraving: foxglove",
+    "creator": "Unknown engraver",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Britannica_Scrophulariaceae,_Foxglove.jpg",
+    "licence": "Public domain",
+    "licenceUrl": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (public domain). Courtesy note: via Wikimedia Commons, https://commons.wikimedia.org/wiki/File:Britannica_Scrophulariaceae,_Foxglove.jpg",
+    "permittedUsage": "Public domain (expired copyright, 19th/early-20th-century publication): unrestricted use, modification and redistribution.",
+    "originalFileSize": 343344,
+    "optimisedFileSize": 50002,
+    "localPaths": [
+      "/assets/engravings/foxglove.webp"
+    ],
+    "modifications": "Foxglove (Digitalis purpurea), Encyclopaedia Britannica 11th ed. (1911) vol. 24 p. 485; botanical detail figures 1-3 and numerals removed, main flowering plant kept. Note: published 1911. Downloaded a Wikimedia Commons standard-size thumbnail of the scan; cropped to the single subject, unwanted neighbouring figures/captions whited out, paper converted to transparency (luminance-to-alpha), ink re-coloured dark sepia (#261b13), downscaled to <=900 px long edge, exported WebP (quality 70-78) with alpha, metadata stripped."
+  },
+  {
+    "name": "Brown Leather (Poly Haven)",
+    "creator": "Rob Tuytel",
+    "sourceUrl": "https://polyhaven.com/a/brown_leather",
+    "licence": "CC0 1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (CC0). Courtesy credit: Poly Haven (polyhaven.com)",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 503348,
+    "optimisedFileSize": 243898,
+    "localPaths": [
+      "/assets/textures/leather-brown.jpg",
+      "/assets/textures/leather-brown.webp"
+    ],
+    "modifications": "From the 1K albedo map; re-encoded as JPEG and WebP for the web, metadata stripped (previous sourcing run). Source identified by pixel correlation with the downloaded originals (r>=0.89; normal map is a re-processed version, r=0.35)."
+  },
+  {
+    "name": "Snow 02 (Poly Haven)",
+    "creator": "Rob Tuytel",
+    "sourceUrl": "https://polyhaven.com/a/snow_02",
+    "licence": "CC0 1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (CC0). Courtesy credit: Poly Haven (polyhaven.com)",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 325497,
+    "optimisedFileSize": 146046,
+    "localPaths": [
+      "/assets/textures/snow.jpg",
+      "/assets/textures/snow.webp"
+    ],
+    "modifications": "From the 1K diffuse map; re-encoded as JPEG and WebP for the web, metadata stripped (previous sourcing run). Source identified by pixel correlation with the downloaded originals (r>=0.89; normal map is a re-processed version, r=0.35)."
+  },
+  {
+    "name": "Velour Velvet (Poly Haven)",
+    "creator": "colormass (photography), Rico Cilliers (processing)",
+    "sourceUrl": "https://polyhaven.com/a/velour_velvet",
+    "licence": "CC0 1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (CC0). Courtesy credit: Poly Haven (polyhaven.com)",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 735556,
+    "optimisedFileSize": 83479,
+    "localPaths": [
+      "/assets/textures/velvet-maroon.jpg",
+      "/assets/textures/velvet-maroon.webp"
+    ],
+    "modifications": "From the 1K diffuse map, cropped and colour-adjusted toward maroon; re-encoded as JPEG and WebP for the web, metadata stripped (previous sourcing run). Source identified by pixel correlation with the downloaded originals (r>=0.89; normal map is a re-processed version, r=0.35)."
+  },
+  {
+    "name": "Wood Table 001 (Poly Haven)",
+    "creator": "Dimitrios Savva (photography), Rico Cilliers (processing)",
+    "sourceUrl": "https://polyhaven.com/a/wood_table_001",
+    "licence": "CC0 1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (CC0). Courtesy credit: Poly Haven (polyhaven.com)",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 267500,
+    "optimisedFileSize": 302293,
+    "localPaths": [
+      "/assets/textures/wood-table.jpg",
+      "/assets/textures/wood-table.webp",
+      "/assets/textures/wood-table-normal.jpg",
+      "/assets/textures/wood-table-normal.webp"
+    ],
+    "modifications": "From the 1K diffuse and normal (GL) maps; re-encoded as JPEG and WebP for the web, metadata stripped (previous sourcing run). Source identified by pixel correlation with the downloaded originals (r>=0.89; normal map is a re-processed version, r=0.35)."
+  },
+  {
+    "name": "Paper 001 (ambientCG)",
+    "creator": "ambientCG (Lennart Demes)",
+    "sourceUrl": "https://ambientcg.com/a/Paper001",
+    "licence": "CC0 1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (CC0). Courtesy credit: ambientCG.com",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 398173,
+    "optimisedFileSize": 48592,
+    "localPaths": [
+      "/assets/textures/paper-fine.jpg",
+      "/assets/textures/paper-fine.webp"
+    ],
+    "modifications": "From the 1K colour map, cropped to 1024x600; re-encoded as JPEG and WebP for the web, metadata stripped (previous sourcing run). Source identified by pixel correlation with the downloaded originals (r>=0.89; normal map is a re-processed version, r=0.35)."
+  },
+  {
+    "name": "Paper 003 (ambientCG)",
+    "creator": "ambientCG (Lennart Demes)",
+    "sourceUrl": "https://ambientcg.com/a/Paper003",
+    "licence": "CC0 1.0",
+    "licenceUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (CC0). Courtesy credit: ambientCG.com",
+    "permittedUsage": "Public domain / CC0: unrestricted use, modification and redistribution, including on a private website.",
+    "originalFileSize": 116443,
+    "optimisedFileSize": 20145,
+    "localPaths": [
+      "/assets/textures/paper-crumpled.jpg",
+      "/assets/textures/paper-crumpled.webp"
+    ],
+    "modifications": "From the 1K colour map; re-encoded as JPEG and WebP for the web, metadata stripped (previous sourcing run). Source identified by pixel correlation with the downloaded originals (r>=0.89; normal map is a re-processed version, r=0.35)."
+  },
+  {
+    "name": "Holiday Kit 2.0 (27 models and shared colour map)",
+    "creator": "Kenney (www.kenney.nl)",
+    "sourceUrl": "https://kenney.nl/assets/holiday-kit",
+    "licence": "CC0 1.0",
+    "licenceUrl": "http://creativecommons.org/publicdomain/zero/1.0/",
+    "downloadDate": "2026-11-26",
+    "attribution": "None required (credit to Kenney given voluntarily)",
+    "permittedUsage": "Personal, educational and commercial use; modification and redistribution allowed",
+    "originalFileSize": 4482244,
+    "optimisedFileSize": 728029,
+    "localPaths": [
+      "public/assets/models/holiday/cabin-corner-logs.glb",
+      "public/assets/models/holiday/cabin-doorway.glb",
+      "public/assets/models/holiday/cabin-roof-snow-chimney.glb",
+      "public/assets/models/holiday/cabin-roof-snow-point.glb",
+      "public/assets/models/holiday/cabin-roof-snow.glb",
+      "public/assets/models/holiday/cabin-roof-top.glb",
+      "public/assets/models/holiday/cabin-wall-roof-center.glb",
+      "public/assets/models/holiday/cabin-wall-roof.glb",
+      "public/assets/models/holiday/cabin-wall-wreath.glb",
+      "public/assets/models/holiday/cabin-wall.glb",
+      "public/assets/models/holiday/cabin-window-a.glb",
+      "public/assets/models/holiday/cabin-window-b.glb",
+      "public/assets/models/holiday/cabin-window-c.glb",
+      "public/assets/models/holiday/lantern.glb",
+      "public/assets/models/holiday/present-a-cube.glb",
+      "public/assets/models/holiday/present-a-rectangle.glb",
+      "public/assets/models/holiday/present-b-cube.glb",
+      "public/assets/models/holiday/present-b-round.glb",
+      "public/assets/models/holiday/reindeer.glb",
+      "public/assets/models/holiday/rocks-small.glb",
+      "public/assets/models/holiday/sled.glb",
+      "public/assets/models/holiday/snow-pile.glb",
+      "public/assets/models/holiday/snowman-hat.glb",
+      "public/assets/models/holiday/tree-decorated-snow.glb",
+      "public/assets/models/holiday/tree-snow-a.glb",
+      "public/assets/models/holiday/tree-snow-b.glb",
+      "public/assets/models/holiday/tree-snow-c.glb",
+      "public/assets/models/holiday/Textures/colormap.png"
+    ],
+    "modifications": "Supplied by Dan as the official zip. Subset of GLB models used unchanged. Colour map recoloured to the project palette (greens to forest, orange timber to aged timber, pinks to gold, reds to maroon)."
+  }
+]
