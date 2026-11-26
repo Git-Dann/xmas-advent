@@ -47,9 +47,9 @@ export function Invitation() {
     <main id="main" className="invitation">
       <div className="invitation-card">
         <Seal kind="star" size={88} className="invitation-seal" />
-        <p className="eyebrow">A private collection</p>
+        <p className="eyebrow">By invitation only</p>
         <h1 className="invitation-title">The 25th Key</h1>
-        <p className="invitation-subtitle">The Story of Us</p>
+        <p className="invitation-subtitle">An unfinished collection</p>
         <p className="invitation-line">Some stories are worth keeping.</p>
         <form className="invitation-form" onSubmit={submit}>
           <label htmlFor="invite-code" className="field-label">Your invitation code</label>

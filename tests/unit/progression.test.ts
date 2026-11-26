@@ -242,6 +242,7 @@ describe('the finale', () => {
     const finale = (await h.get('/api/finale')).json;
     expect(finale.unlocked).toBe(true);
     expect(finale.letter.join(' ')).toContain('Elephant Juice');
+    expect(finale.fullTitle).toBe('The 25th Key: The Story of Us');
     await h.setClock('2027-01-15T12:00:00Z');
     const cal = (await h.get('/api/calendar')).json;
     expect(cal.completedCount).toBe(25);

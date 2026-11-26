@@ -12,6 +12,10 @@
 | 4. The Little Mysteries | 19–24 | Personal, emotional | Heart (Day 22), then the Christmas Key |
 | 5. Christmas Morning | 25 | Joyful, celebratory | |
 
+## Title
+
+The invitation shows only "The 25th Key" and "An unfinished collection", so nothing gives the twist away before it is earned. The full title, "The 25th Key: The Story of Us", is served by the server only after the vault opens, and appears for the first time in the Christmas Room. The public build check blocks the phrase from ever reaching public files.
+
 ## Voices
 
 - **The Curator** (Dan, revealed on Day 23): courteous, dry, slightly theatrical, often wrong about cake. Short sentences. Never gushing until the reveal.

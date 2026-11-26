@@ -174,6 +174,8 @@ export interface FinaleResponse {
   signature?: string;
   media?: { id: string; type: 'image' | 'audio' | 'video'; url: string; caption?: string }[];
   closing?: string;
+  /** The full title, revealed only in the Christmas Room. */
+  fullTitle?: string;
 }
 
 export interface ApiError {

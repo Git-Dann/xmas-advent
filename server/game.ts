@@ -399,6 +399,7 @@ export async function getFinale(ctx: GameContext): Promise<FinaleResponse> {
     letter: final.letter,
     signature: final.signature,
     closing: final.closing,
+    fullTitle: 'The 25th Key: The Story of Us',
     media: (rows.results ?? []).map((row) => ({
       id: row.id,
       type: row.content_type.startsWith('image') ? 'image' : row.content_type.startsWith('video') ? 'video' : 'audio',

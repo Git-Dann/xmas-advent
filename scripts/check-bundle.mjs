@@ -9,7 +9,7 @@ import { join } from 'node:path';
 const FORBIDDEN = [
   'Edge Hill', 'Edgehill', 'Gulliver', 'Formby', 'Little Things', 'One Direction', 'Foxglove Way', 'Elephant Juice',
   'Chunky and Grey', 'Universal Studios', 'Lindsay', 'Oliver', 'George', '9186', '2510', 'tp-k2', 'w-s9', 'o-4r',
-  'bin-a', 'pos-n', 'Merry Christmas, Bub', 'porch door', 'Wedding Breakfast', 'Her story comes first',
+  'bin-a', 'pos-n', 'Merry Christmas, Bub', 'porch door', 'Story of Us', 'Wedding Breakfast', 'Her story comes first',
 ];
 const TEXT = /\.(js|css|html|json|txt|webmanifest|svg|map)$/;
 
