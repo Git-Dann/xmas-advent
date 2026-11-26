@@ -1,0 +1,53 @@
+{
+  "name": "the-25th-key",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The 25th Key: The Story of Us. A private, personalised Christmas puzzle experience.",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "dev": "vite",
+    "dev:api": "npm run build && wrangler pages dev dist --port 8788 --binding ENVIRONMENT=local --binding ALLOW_TEST_CLOCK=1 --binding ADMIN_PASSWORD=local-admin --binding INVITE_CODES=LOCAL-KEY-2026",
+    "build": "tsc -b && vite build && node scripts/check-bundle.mjs",
+    "typecheck": "tsc -b --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:e2e": "playwright test --trace off",
+    "db:migrate:local": "wrangler d1 migrations apply the-25th-key --local",
+    "db:migrate:preview": "wrangler d1 migrations apply the-25th-key-preview --remote --env preview",
+    "db:migrate:production": "wrangler d1 migrations apply the-25th-key --remote",
+    "db:seed:local": "node scripts/seed-local.mjs",
+    "backup:production": "node scripts/backup.mjs production",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --branch preview",
+    "deploy:production": "npm run build && wrangler pages deploy dist --branch main"
+  },
+  "dependencies": {
+    "@fontsource-variable/cormorant-garamond": "5.3.0",
+    "@fontsource-variable/manrope": "5.3.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "three": "0.187.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.14.1",
+    "@cloudflare/workers-types": "5.20261125.1",
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@types/node": "26.6.11",
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "@types/three": "0.187.0",
+    "@vitejs/plugin-react": "6.3.0",
+    "eslint": "10.15.0",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "globals": "17.14.0",
+    "typescript": "5.9.3",
+    "typescript-eslint": "8.74.0",
+    "vite": "8.4.0",
+    "vitest": "5.1.2",
+    "wrangler": "4.168.0"
+  }
+}
