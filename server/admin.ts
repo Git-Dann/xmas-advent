@@ -138,10 +138,12 @@ export async function saveFinal(env: Env, body: Record<string, unknown>): Promis
 
 export async function createCode(env: Env, body: Record<string, unknown>): Promise<{ code: string }> {
   const label = typeof body.label === 'string' && body.label.trim() ? body.label.trim().slice(0, 80) : 'Invitation';
+  // Tester codes sign in as the isolated preview player, which has its own progress and clock.
+  const playerId = body.player === 'preview' ? PREVIEW_PLAYER_ID : REAL_PLAYER_ID;
   const code = randomInviteCode();
   await env.DB.prepare('INSERT INTO access_codes (code_hash, player_id, label, created_at) VALUES (?, ?, ?, ?)')
-    .bind(await sha256Hex(normaliseInviteCode(code)), REAL_PLAYER_ID, label, new Date().toISOString()).run();
-  await audit(env, 'code.create', { label });
+    .bind(await sha256Hex(normaliseInviteCode(code)), playerId, label, new Date().toISOString()).run();
+  await audit(env, 'code.create', { label, player: playerId === PREVIEW_PLAYER_ID ? 'preview' : 'real' });
   return { code };
 }
 

@@ -326,7 +326,11 @@ function AccessTab({ overview, run }: { overview: Overview; run: (l: string, f: 
         <p className="admin-help">A code signs Chloe in on any device and keeps her progress. Create one for the invitation, and another if she ever loses access. The code is shown once; only a hash is stored.</p>
         <label htmlFor="label">Label</label>
         <input id="label" value={label} onChange={(e) => setLabel(e.target.value)} />
-        <button type="button" onClick={() => run('Code created', async () => setCode((await api<{ code: string }>('/api/admin/codes', { method: 'POST', body: { label } })).code))}>Create code</button>
+        <div className="admin-row">
+          <button type="button" onClick={() => run('Code created', async () => setCode((await api<{ code: string }>('/api/admin/codes', { method: 'POST', body: { label } })).code))}>Create code for Chloe</button>
+          <button type="button" onClick={() => run('Tester code created', async () => setCode((await api<{ code: string }>('/api/admin/codes', { method: 'POST', body: { label: `${label} (tester)`, player: 'preview' } })).code))}>Create tester code (preview player)</button>
+        </div>
+        <p className="admin-help">Tester codes sign in as the preview player: separate progress, and the simulated date set in the Preview tab. Chloe is never affected.</p>
         {code ? (
           <div className="admin-code">
             <p>Code: <strong>{code}</strong></p>
@@ -338,7 +342,7 @@ function AccessTab({ overview, run }: { overview: Overview; run: (l: string, f: 
           <tbody>
             {(overview.codes as any[]).map((c) => (
               <tr key={c.ref}>
-                <td><code>{c.ref}</code></td><td>{c.label}</td><td>{new Date(c.created_at).toLocaleString('en-GB')}</td><td>{c.revoked_at ? 'revoked' : 'active'}</td>
+                <td><code>{c.ref}</code></td><td>{c.label}{c.player_id === 'player-preview' ? ' · preview' : ''}</td><td>{new Date(c.created_at).toLocaleString('en-GB')}</td><td>{c.revoked_at ? 'revoked' : 'active'}</td>
                 <td>{!c.revoked_at ? <button type="button" onClick={() => confirm('Revoke this code?') && run('Revoked', () => api('/api/admin/codes/revoke', { method: 'POST', body: { ref: c.ref } }))}>Revoke</button> : null}</td>
               </tr>
             ))}
