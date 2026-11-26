@@ -36,6 +36,9 @@ export function VillageScene({ days, focusDay, mode = 'village' }: { days: Calen
         handle.current = createVillage(canvas, {
           reducedMotion: reduced,
           mode,
+          onBuilt: () => {
+            if (!cancelled) setStatus('ready');
+          },
           onContextLost: () => {
             handle.current?.dispose();
             handle.current = null;
@@ -47,7 +50,6 @@ export function VillageScene({ days, focusDay, mode = 'village' }: { days: Calen
             }, { once: true });
           },
         });
-        setStatus('ready');
       })
       .catch(() => setStatus('fallback'));
     const observer = new ResizeObserver(() => handle.current?.resize());
