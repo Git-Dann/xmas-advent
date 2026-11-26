@@ -14,11 +14,16 @@ export function Invitation() {
 
   useEffect(() => {
     // Invitation links carry the code in the fragment, which is never sent to the server or logs.
-    const match = /code=([A-Za-z0-9-]+)/.exec(location.hash);
-    if (match) {
-      setCode(match[1]!);
-      history.replaceState(null, '', location.pathname);
-    }
+    const read = () => {
+      const match = /code=([A-Za-z0-9-]+)/.exec(location.hash);
+      if (match) {
+        setCode(match[1]!);
+        history.replaceState(null, '', location.pathname);
+      }
+    };
+    read();
+    window.addEventListener('hashchange', read);
+    return () => window.removeEventListener('hashchange', read);
   }, []);
 
   async function submit(event: FormEvent) {
