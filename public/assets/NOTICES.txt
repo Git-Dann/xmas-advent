@@ -1,0 +1,152 @@
+THIRD-PARTY NOTICES - "The 25th Key" (private, personal, non-commercial Christmas puzzle)
+Full per-file details (source URLs, sizes, modifications): docs/asset-register.json
+No AI-generated audio or images are used. All assets below are existing works used under the licences stated.
+
+==============================================================================
+1. !Boring Sound Kit - CC BY-NC-SA 4.0
+==============================================================================
+Sounds from the "!Boring Sound Kit" by Not Boring Software (https://notbor.ing/soundkit), licensed under CC BY-NC-SA 4.0 (https://creativecommons.org/licenses/by-nc-sa/4.0/). These files have been modified (trimmed, normalised and converted) and are distributed under the same CC BY-NC-SA 4.0 licence.
+
+Notice: The !Boring Sound Kit by Not Boring Software is licensed under the Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International licence (CC BY-NC-SA 4.0):
+https://creativecommons.org/licenses/by-nc-sa/4.0/ (legal code: https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode).
+Changes made: the original WAV files were trimmed (silence removed), mixed to mono, faded,
+loudness-normalised and converted to AAC (.m4a), and renamed. These adapted files remain
+licensed under CC BY-NC-SA 4.0. They are used here only for a private, non-commercial project
+and must not be used in anything sold or monetised. No warranties are given by the licensor.
+Files:
+  /assets/audio/ui/click-1.m4a
+  /assets/audio/ui/click-2.m4a
+  /assets/audio/ui/click-3.m4a
+  /assets/audio/fx/dial-tick-1.m4a
+  /assets/audio/fx/dial-tick-2.m4a
+  /assets/audio/fx/dial-tick-3.m4a
+  /assets/audio/fx/wood-tap-1.m4a
+  /assets/audio/fx/wood-tap-2.m4a
+  /assets/audio/fx/wood-tap-3.m4a
+  /assets/audio/fx/whoosh-1.m4a
+  /assets/audio/fx/whoosh-2.m4a
+  /assets/audio/cues/musical-tap-1.m4a
+  /assets/audio/cues/musical-tap-2.m4a
+  /assets/audio/cues/musical-tap-3.m4a
+  /assets/audio/cues/success-1.m4a
+  /assets/audio/cues/reveal-shimmer-1.m4a
+  /assets/audio/cues/reveal-shimmer-2.m4a
+  /assets/audio/ui/undo-soft-1.m4a
+
+==============================================================================
+2. soundkit (THISUX) - MIT License
+==============================================================================
+Source: https://github.com/thisuxhq/soundkit (DSP-generated sounds)
+Files:
+  /assets/audio/ui/back-1.m4a
+  /assets/audio/ui/back-2.m4a
+  /assets/audio/ui/close-1.m4a
+  /assets/audio/ui/error-soft-1.m4a
+  /assets/audio/ui/error-soft-2.m4a
+  /assets/audio/ui/inspect-1.m4a
+  /assets/audio/ui/open-1.m4a
+  /assets/audio/ui/press-1.m4a
+  /assets/audio/ui/press-2.m4a
+  /assets/audio/ui/release-1.m4a
+  /assets/audio/ui/release-2.m4a
+  /assets/audio/ui/tap-1.m4a
+  /assets/audio/ui/tap-2.m4a
+  /assets/audio/ui/tap-3.m4a
+  /assets/audio/cues/collect-1.m4a
+  /assets/audio/cues/collect-2.m4a
+  /assets/audio/cues/collect-3.m4a
+  /assets/audio/cues/complete-1.m4a
+  /assets/audio/cues/complete-2.m4a
+  /assets/audio/cues/correct-1.m4a
+  /assets/audio/cues/correct-2.m4a
+
+MIT License
+
+Copyright (c) 2026 THISUX Private Limited
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+==============================================================================
+3. Creative Commons Attribution (CC BY) sounds - attribution required
+==============================================================================
+- "Campfire sound ambience" by Glaneur de sons (via Freesound), CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Campfire_sound_ambience.ogg. Modified (excerpted, looped, normalised, converted).
+  Files: /assets/audio/ambient/fireplace-1.m4a
+- "Tawny owl calling at night in Tuntorp, Brastad, Sweden" by W.carter, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tawny_owl_calling_at_night_in_Tuntorp,_Brastad,_Sweden.ogg. Modified (excerpted, looped, normalised, converted).
+  Files: /assets/audio/ambient/winter-night-1.m4a, /assets/audio/ambient/winter-night-2.m4a
+- "lock" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Lock_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).
+  Files: /assets/audio/fx/lock-release-2.m4a
+- "lock 2" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Lock_2_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).
+  Files: /assets/audio/fx/key-insert-1.m4a
+- "keys shaking" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Keys_shaking_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).
+  Files: /assets/audio/fx/key-insert-2.m4a
+- "key item pick up 2" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Key_item_pick_up_2_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).
+  Files: /assets/audio/fx/key-pickup-1.m4a
+- "tight door lock" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tight_door_lock_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).
+  Files: /assets/audio/fx/key-turn-1.m4a
+- "tight door lock 2" by Gravity Sound, CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/), via Wikimedia Commons: https://commons.wikimedia.org/wiki/File:Tight_door_lock_2_(Gravity_Sound).wav. Modified (trimmed, normalised, converted).
+  Files: /assets/audio/fx/key-turn-2.m4a
+
+==============================================================================
+4. Public domain / CC0 sounds (no attribution required; credited with thanks)
+==============================================================================
+- "Howling wind" by Tvabutzku1234 (CC0), https://commons.wikimedia.org/wiki/File:Howling_wind.ogg -> /assets/audio/ambient/wind-1.m4a
+- "Killiney Hill Storm Floris 20250804 1537" by Karlunun (CC0), https://commons.wikimedia.org/wiki/File:Killiney_Hill_Storm_Floris_20250804_1537.ogg -> /assets/audio/ambient/wind-2.m4a
+- "Dry grass burning in open fireplace" by ezwa (Public domain), https://commons.wikimedia.org/wiki/File:Dry_grass_burning_in_open_fireplace.ogg -> /assets/audio/ambient/fireplace-2.m4a
+- "Turning a page" by planish (Public domain), https://commons.wikimedia.org/wiki/File:Turning_a_page.ogg -> /assets/audio/fx/letter-unfold-1.m4a
+- "Book paper pages assorted" by stephan (Public domain), https://commons.wikimedia.org/wiki/File:Book_paper_pages_assorted.ogg -> /assets/audio/fx/paper-rustle-1.m4a, /assets/audio/fx/paper-rustle-2.m4a, /assets/audio/fx/paper-rustle-3.m4a, /assets/audio/fx/letter-unfold-2.m4a
+- "Tearing off small strip" by stephan (Public domain), https://commons.wikimedia.org/wiki/File:Tearing_off_small_strip.ogg -> /assets/audio/fx/seal-break-1.m4a
+- "342618 spacejoe lock-1-close-lock-3" by SpaceJoe (CC0), https://commons.wikimedia.org/wiki/File:342618_spacejoe_lock-1-close-lock-3.wav -> /assets/audio/fx/lock-engage-1.m4a
+- "342701 spacejoe lock-3-close-lock-1" by SpaceJoe (CC0), https://commons.wikimedia.org/wiki/File:342701_spacejoe_lock-3-close-lock-1.wav -> /assets/audio/fx/lock-engage-2.m4a
+- "342675 spacejoe lock-2-close-lock-1" by SpaceJoe (CC0), https://commons.wikimedia.org/wiki/File:342675_spacejoe_lock-2-close-lock-1.wav -> /assets/audio/fx/lock-engage-3.m4a
+- "342706 spacejoe lock-3-open-lock-3" by SpaceJoe (CC0), https://commons.wikimedia.org/wiki/File:342706_spacejoe_lock-3-open-lock-3.wav -> /assets/audio/fx/lock-release-1.m4a
+- "Squeaky door" by leonmire (Public domain), https://commons.wikimedia.org/wiki/File:Squeaky_door.ogg -> /assets/audio/fx/door-open-1.m4a
+- "Closing an old door" by ezwa (Public domain), https://commons.wikimedia.org/wiki/File:Closing_an_old_door.ogg -> /assets/audio/fx/door-close-1.m4a
+- "Door handle creaking" by stephan (Public domain), https://commons.wikimedia.org/wiki/File:Door_handle_creaking.ogg -> /assets/audio/fx/door-handle-1.m4a
+- "Watch tick" by Marble Toast (CC0), https://commons.wikimedia.org/wiki/File:Watch_tick.ogg -> /assets/audio/fx/dial-tick-4.m4a
+- "Chime" by Walechon24 (CC0), https://commons.wikimedia.org/wiki/File:Chime.wav -> /assets/audio/cues/chime-1.m4a
+- "Chime (1) Sample" by UnKnownrNone (CC0), https://commons.wikimedia.org/wiki/File:Chime_(1)_Sample.wav -> /assets/audio/cues/chime-2.m4a
+- "Windglockenspiel.Koshi" by Membeth. (CC0), https://commons.wikimedia.org/wiki/File:Windglockenspiel.Koshi.ogg -> /assets/audio/cues/wind-chime-1.m4a
+- "Stille Nacht" by unbekannt, tot seit über 70 Jahren (Public domain), https://commons.wikimedia.org/wiki/File:Stille_Nacht.ogg -> /assets/audio/cues/finale-music-box-1.m4a
+- "Sleigh bells" by The Midnite Wolf (CC0), https://commons.wikimedia.org/wiki/File:Sleigh_bells.wav -> /assets/audio/cues/finale-sleigh-bells-1.m4a
+
+==============================================================================
+5. Engravings (public domain, via Wikimedia Commons)
+==============================================================================
+- /assets/engravings/red-squirrel.webp: Plate "Nagetiere I", Meyers Konversations-Lexikon 4th ed. (1885-90), vol. 11; panel "Eichhorn (Sciurus vulgaris)"; the two smaller squirrels at right were removed. Creator: Bibliographisches Institut. Source: https://commons.wikimedia.org/wiki/File:Meyers_b11_s0979a.jpg
+- /assets/engravings/robin.webp: Robin and wren book illustration, 1871 (plate printer Joseph M. Kornheim, Frederick Warne & Co.); upper bird (robin) cropped; source image is only 553 px wide so the result is small (285x240). Creator: Plate printer Joseph M. Kornheim (1810-1896) published by Frederick Warne & Co.. Source: https://commons.wikimedia.org/wiki/File:Book_Illustration_of_a_Robin_and_Wren.jpg
+- /assets/engravings/owl.webp: Plate "Eulen", Meyers Konversations-Lexikon 4th ed. (1885-90), vol. 5; panel "Waldkauz (Syrnium aluco)" (tawny owl). Creator: various. Source: https://commons.wikimedia.org/wiki/File:Meyers_b5_s0905a.jpg
+- /assets/engravings/hare.webp: Wood engraving after Guido Hammer, Die Gartenlaube 1871 p. 645; running hare cropped (dog in background excluded). Creator: various. Source: https://commons.wikimedia.org/wiki/File:Die_Gartenlaube_(1871)_b_645.jpg
+- /assets/engravings/fox.webp: European fox, The American Cyclopaedia vol. 7 (1879) p. 359; cropped to the fox (prey at the bottom of the original excluded); lower alpha cut-off to drop print show-through from the reverse page. Creator: Unknown engraver. Source: https://commons.wikimedia.org/wiki/File:AmCyc_Fox_-_European_Fox.jpg
+- /assets/engravings/hedgehog.webp: Hedgehog engraving by Butterworth & Heath, Encyclopaedia Britannica 11th ed. (1911), vol. 13. Note: published 1911 (early 20th century), engraved in the 19th-century line style. Creator: Butterworth and Heath. Source: https://commons.wikimedia.org/wiki/File:EB1911_-_Hedgehog.jpg
+- /assets/engravings/deer.webp: Plate "Hirsche", Meyers Konversations-Lexikon 4th ed. (1885-90), vol. 8; panel "Renntier (Rangifer tarandus)" (reindeer, antlered); neighbouring figures (Axis deer legs, Sami herder and tent) whited out. Creator: Unknown. Source: https://commons.wikimedia.org/wiki/File:Meyers_b8_s0565a.jpg
+- /assets/engravings/elephant.webp: Head and trunk of an Asiatic elephant, Popular Science Monthly vol. 2 (1872-73). Creator: Unknown engraver. Source: https://commons.wikimedia.org/wiki/File:PSM_V02_D156_Asiatic_elephant.jpg
+- /assets/engravings/foxglove.webp: Foxglove (Digitalis purpurea), Encyclopaedia Britannica 11th ed. (1911) vol. 24 p. 485; botanical detail figures 1-3 and numerals removed, main flowering plant kept. Note: published 1911. Creator: Unknown engraver. Source: https://commons.wikimedia.org/wiki/File:Britannica_Scrophulariaceae,_Foxglove.jpg
+
+==============================================================================
+6. Textures (CC0 1.0)
+==============================================================================
+- Brown Leather (Poly Haven) by Rob Tuytel, CC0 1.0, https://polyhaven.com/a/brown_leather -> /assets/textures/leather-brown.jpg, /assets/textures/leather-brown.webp
+- Snow 02 (Poly Haven) by Rob Tuytel, CC0 1.0, https://polyhaven.com/a/snow_02 -> /assets/textures/snow.jpg, /assets/textures/snow.webp
+- Velour Velvet (Poly Haven) by colormass (photography), Rico Cilliers (processing), CC0 1.0, https://polyhaven.com/a/velour_velvet -> /assets/textures/velvet-maroon.jpg, /assets/textures/velvet-maroon.webp
+- Wood Table 001 (Poly Haven) by Dimitrios Savva (photography), Rico Cilliers (processing), CC0 1.0, https://polyhaven.com/a/wood_table_001 -> /assets/textures/wood-table.jpg, /assets/textures/wood-table.webp, /assets/textures/wood-table-normal.jpg, /assets/textures/wood-table-normal.webp
+- Paper 001 (ambientCG) by ambientCG (Lennart Demes), CC0 1.0, https://ambientcg.com/a/Paper001 -> /assets/textures/paper-fine.jpg, /assets/textures/paper-fine.webp
+- Paper 003 (ambientCG) by ambientCG (Lennart Demes), CC0 1.0, https://ambientcg.com/a/Paper003 -> /assets/textures/paper-crumpled.jpg, /assets/textures/paper-crumpled.webp
+
+3D models: Holiday Kit 2.0 by Kenney (www.kenney.nl), CC0 1.0. Colour map recoloured for this project.

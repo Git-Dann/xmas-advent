@@ -1,5 +1,19 @@
 # Deployment
 
+## Live now
+
+| Item | Value |
+|---|---|
+| Production URL | https://the-25th-key.pages.dev |
+| Admin | https://the-25th-key.pages.dev/admin |
+| Cloudflare Pages project | `the-25th-key` (Direct Upload, production branch `main`) |
+| D1 database | `the-25th-key` (`46cdc2ba-6994-413a-8761-f08613546518`), schema `0001_init.sql` applied and recorded in `d1_migrations` |
+| Production variables | `ENVIRONMENT=production`, `ADMIN_PASSWORD` (secret) |
+| Preview deployments | No database binding at all, so they can never read or change Chloe's data |
+| R2 (photos and recordings) | Not enabled on the account yet; uploads are disabled until it is |
+
+The first deploy was made from a cloud session through the Cloudflare connector, because no API token was available there: public files were uploaded with a Pages upload token (`scripts/deploy-api.mjs`), and the server bundle (`deploy/worker-entry.ts`, built with esbuild as an advanced-mode `_worker.js`) was passed to the deployment API directly. From your own machine, the normal route below is simpler.
+
 Target: Cloudflare Pages (static shell) with Pages Functions (`/api/*`), D1 (game data) and R2 (private family media). Nothing has been deployed yet. Every step below runs under Dan's Cloudflare account and needs his go-ahead.
 
 ## Cost

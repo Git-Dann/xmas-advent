@@ -16,12 +16,14 @@ ENVIRONMENT = "production"
 [[d1_databases]]
 binding = "DB"
 database_name = "the-25th-key"
-database_id = "REPLACE_WITH_PRODUCTION_D1_ID"
+database_id = "46cdc2ba-6994-413a-8761-f08613546518"
 migrations_dir = "migrations"
 
-[[r2_buckets]]
-binding = "MEDIA"
-bucket_name = "the-25th-key-media"
+# R2 is not enabled on the account yet. Uncomment after enabling R2 and creating the bucket
+# (see docs/DEPLOYMENT.md). Until then, photo and recording uploads are disabled.
+# [[r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "the-25th-key-media"
 
 [env.preview.vars]
 ENVIRONMENT = "preview"
@@ -32,6 +34,6 @@ database_name = "the-25th-key-preview"
 database_id = "REPLACE_WITH_PREVIEW_D1_ID"
 migrations_dir = "migrations"
 
-[[env.preview.r2_buckets]]
-binding = "MEDIA"
-bucket_name = "the-25th-key-media-preview"
+# [[env.preview.r2_buckets]]
+# binding = "MEDIA"
+# bucket_name = "the-25th-key-media-preview"
