@@ -22,7 +22,8 @@
     "db:seed:local": "node scripts/seed-local.mjs",
     "backup:production": "node scripts/backup.mjs production",
     "deploy:preview": "npm run build && wrangler pages deploy dist --branch preview",
-    "deploy:production": "npm run build && wrangler pages deploy dist --branch main"
+    "deploy:production": "npm run build && wrangler pages deploy dist --branch main",
+    "docs:generate": "esbuild scripts/gen-docs.ts --bundle --platform=node --format=esm --outfile=node_modules/.tmp/gen-docs.mjs --log-level=warning && node node_modules/.tmp/gen-docs.mjs"
   },
   "dependencies": {
     "@fontsource-variable/cormorant-garamond": "5.3.0",
