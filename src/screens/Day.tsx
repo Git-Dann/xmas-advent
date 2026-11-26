@@ -109,7 +109,10 @@ export function DayScreen({ day }: { day: number }) {
         {puzzle.intro.map((p, i) => <p key={i} className={i === 0 ? 'lede' : undefined}>{p}</p>)}
       </div>
 
-      <p className="objective"><Glyph name="magnifier" size={20} /><span>{puzzle.objective}</span></p>
+      <div className="objective">
+        <p className="objective-label">Your task</p>
+        <p className="objective-text">{puzzle.objective}</p>
+      </div>
 
       {puzzle.requiredEvidence.length > 0 ? (
         <section className="needed" aria-labelledby="needed-title">

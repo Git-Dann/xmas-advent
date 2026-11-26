@@ -227,94 +227,120 @@
   margin-bottom: var(--s-4);
 }
 
-/* ---------- Doors ---------- */
+/* ---------- Doors ----------
+ * 24 arched cottage doors in a gapless grid (4 x 6 on phones, 6 x 4 wider), then the
+ * Christmas double door across the full width. No outlines: depth comes from the recessed
+ * doorway, the leaf and the light behind it.
+ */
 .doors {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: clamp(6px, 2vw, 14px);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(10px, 3vw, 18px) clamp(10px, 3.2vw, 18px);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
+@media (min-width: 640px) {
+  .doors {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
 }
 
 .door-cell-25 {
   grid-column: 1 / -1;
+  justify-self: center;
+  width: min(100%, 236px);
+  margin-top: var(--s-3);
 }
 
 .door {
-  --frame: #3a271c;
+  --arch: 50% 50% 5px 5px / 34% 34% 5px 5px;
   position: relative;
+  display: block;
   width: 100%;
-  aspect-ratio: 3 / 4;
-  min-height: 56px;
+  aspect-ratio: 5 / 7;
   padding: 0;
   border: 0;
-  border-radius: 6px 6px 3px 3px;
-  background: #0b1511;
-  box-shadow: inset 0 0 0 3px var(--frame), inset 0 0 0 4px rgba(211, 180, 119, 0.2), 0 2px 6px rgba(0, 0, 0, 0.4);
-  perspective: 600px;
+  border-radius: var(--arch);
+  background: #050b08;
+  box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.75), 0 1px 0 rgba(244, 235, 221, 0.05);
+  perspective: 700px;
   cursor: pointer;
-  overflow: visible;
   touch-action: manipulation;
-}
-
-.door-cell-25 .door {
-  aspect-ratio: auto;
-  height: 84px;
+  transition: box-shadow var(--t-object) var(--ease-out);
 }
 
 .door-light {
   position: absolute;
-  inset: 4px;
-  border-radius: 3px;
-  background: radial-gradient(circle at 50% 60%, #ffd892, #e7a64c 45%, #7a3d17);
+  inset: 0;
+  border-radius: var(--arch);
+  background: radial-gradient(120% 90% at 30% 60%, #ffe0a3, #eaa24c 45%, #8a3f14 85%);
   opacity: 0;
   transition: opacity var(--t-object) var(--ease-out);
 }
 
 .door-leaf {
   position: absolute;
-  inset: 4px;
+  inset: 0;
   display: grid;
   place-items: center;
-  border-radius: 3px;
+  border-radius: var(--arch);
   background:
-    linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.25)),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 46%, transparent 46% 54%, rgba(255, 255, 255, 0.04) 54%),
-    var(--forest);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(0, 0, 0, 0.28)),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0 18%, rgba(0, 0, 0, 0.16) 18% 19%),
+    #24432f;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1), inset 0 -10px 18px rgba(0, 0, 0, 0.25);
   transform-origin: left center;
   transition: transform var(--t-object) var(--ease-out), background var(--t-ui);
   backface-visibility: hidden;
 }
 
+/* Brass knob */
+.door-leaf::after {
+  content: '';
+  position: absolute;
+  right: 9%;
+  top: 66%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #f6e2b0, #9c7c45);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
 .door-number {
+  margin-top: -14%;
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 5vw, 1.9rem);
+  font-size: clamp(1.5rem, 6.2vw, 2rem);
   font-weight: 600;
-  color: var(--ivory);
   line-height: 1;
+  color: var(--ivory);
   font-variant-numeric: lining-nums;
 }
 
 .door-check {
   position: absolute;
-  bottom: 5px;
-  right: 5px;
+  left: 50%;
+  bottom: 12%;
+  transform: translateX(-50%);
   color: var(--gold);
 }
 
-.door-key {
-  position: absolute;
-  top: 8px;
-  right: 10px;
-  color: var(--gold);
+/* Future and locked: shut and quiet */
+.door.is-future,
+.door.is-locked {
+  cursor: default;
 }
 
-/* future: dark wood, quiet */
 .door.is-future .door-leaf,
 .door.is-locked .door-leaf {
-  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4)), #1a2c24;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(0, 0, 0, 0.35)),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0 18%, rgba(0, 0, 0, 0.18) 18% 19%),
+    #182c22;
 }
 
 .door.is-future .door-number,
@@ -322,22 +348,24 @@
   color: var(--mist-soft);
 }
 
-.door.is-future,
-.door.is-locked {
-  cursor: default;
+.door.is-future .door-leaf::after,
+.door.is-locked .door-leaf::after {
+  opacity: 0.45;
 }
 
-/* available: restrained, inviting gold */
+/* Available: a maroon door with warm light spilling round its edge */
 .door.is-available,
 .door.is-in_progress {
-  --frame: #8a6b30;
-  box-shadow: inset 0 0 0 3px var(--frame), inset 0 0 0 4px rgba(246, 226, 176, 0.45), 0 0 0 1px rgba(211, 180, 119, 0.5), 0 0 22px rgba(230, 204, 149, 0.28);
-  animation: door-breathe 3.2s var(--ease-in-out) infinite;
+  box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.75), 0 0 26px rgba(234, 162, 76, 0.32);
+  animation: door-breathe 3.4s var(--ease-in-out) infinite;
 }
 
 .door.is-available .door-leaf,
 .door.is-in_progress .door-leaf {
-  background: linear-gradient(rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.2)), var(--maroon);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(0, 0, 0, 0.25)),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0 18%, rgba(0, 0, 0, 0.14) 18% 19%),
+    var(--maroon);
 }
 
 .door.is-available .door-number,
@@ -347,18 +375,17 @@
 
 @keyframes door-breathe {
   50% {
-    box-shadow: inset 0 0 0 3px var(--frame), inset 0 0 0 4px rgba(246, 226, 176, 0.6), 0 0 0 1px rgba(211, 180, 119, 0.7), 0 0 30px rgba(230, 204, 149, 0.4);
+    box-shadow: inset 0 6px 14px rgba(0, 0, 0, 0.75), 0 0 38px rgba(234, 162, 76, 0.48);
   }
 }
 
-/* complete: warm light glowing round a slightly ajar door */
+/* Complete: the door stands ajar and the room behind it is lit */
 .door.is-complete .door-light {
   opacity: 1;
 }
 
 .door.is-complete .door-leaf {
-  transform: rotateY(-24deg);
-  background: linear-gradient(rgba(255, 220, 160, 0.05), rgba(0, 0, 0, 0.25)), #2b4d3f;
+  transform: rotateY(-32deg);
 }
 
 .door:active:not([aria-disabled='true']) .door-leaf {
@@ -366,7 +393,7 @@
 }
 
 .door.is-complete:active .door-leaf {
-  transform: rotateY(-24deg) scale(0.97);
+  transform: rotateY(-32deg) scale(0.97);
 }
 
 .door.is-opening .door-light {
@@ -374,8 +401,48 @@
 }
 
 .door.is-opening .door-leaf {
-  transform: rotateY(-100deg);
+  transform: rotateY(-105deg);
   transition-duration: 480ms;
+}
+
+/* Christmas: a wide double door */
+.doors .door-cell-25 .door {
+  --arch: 50% 50% 6px 6px / 38% 38% 6px 6px;
+  aspect-ratio: 5 / 4;
+  height: auto;
+}
+
+.doors .door-cell-25 .door .door-leaf {
+  background:
+    linear-gradient(90deg, transparent calc(50% - 1px), rgba(0, 0, 0, 0.5) calc(50% - 1px) calc(50% + 1px), transparent calc(50% + 1px)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.07), rgba(0, 0, 0, 0.3)),
+    repeating-linear-gradient(90deg, rgba(0, 0, 0, 0) 0 9%, rgba(0, 0, 0, 0.14) 9% 9.5%),
+    #4a1a2c;
+  align-content: center;
+  gap: 8px;
+}
+
+.doors .door-cell-25 .door.is-future .door-leaf,
+.doors .door-cell-25 .door.is-locked .door-leaf {
+  filter: brightness(0.72) saturate(0.8);
+}
+
+.doors .door-cell-25 .door-leaf::after {
+  display: none;
+}
+
+.door-cell-25 .door-number {
+  margin-top: 0;
+  font-size: clamp(2.1rem, 8vw, 2.7rem);
+  color: var(--gold);
+}
+
+.door-key {
+  color: var(--gold);
+}
+
+.doors .door-cell-25 .door.is-complete .door-leaf {
+  transform: rotateY(-22deg);
 }
 
 /* ---------- Calendar list ---------- */
@@ -779,18 +846,6 @@
 }
 
 @media (min-width: 760px) {
-  .doors {
-    gap: 16px;
-  }
-
-  .door-cell-25 {
-    grid-column: 3;
-  }
-
-  .door-cell-25 .door {
-    aspect-ratio: 3 / 4;
-    height: auto;
-  }
 
   .village-hero {
     margin: 0;

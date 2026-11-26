@@ -97,8 +97,8 @@ export function VillageScreen() {
                   <span className="door-light" aria-hidden="true" />
                   <span className="door-leaf" aria-hidden="true">
                     <span className="door-number">{day.day}</span>
-                    {day.state === 'complete' ? <Glyph name="check" size={14} className="door-check" /> : null}
-                    {day.day === 25 ? <Glyph name="key" size={16} className="door-key" /> : null}
+                    {day.day === 25 ? <Glyph name="key" size={20} className="door-key" /> : null}
+                    {day.state === 'complete' && day.day !== 25 ? <Glyph name="check" size={14} className="door-check" /> : null}
                   </span>
                 </button>
               </li>
