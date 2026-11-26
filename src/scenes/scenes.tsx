@@ -269,7 +269,16 @@ export function WoodlandStage({ scene, stage, busy, submit }: {
               style={{ left: `${o.x}%`, top: `${o.y}%`, width: `${Math.round(o.scale * 22)}%` }}
               onClick={() => { setSelected(o.id); void audio.play('object.inspect'); }}
             >
-              <img src={o.image} alt="" loading="lazy" draggable={false} onError={(e) => (e.currentTarget.style.visibility = 'hidden')} />
+              <img
+                src={o.image}
+                alt=""
+                loading="lazy"
+                draggable={false}
+                onError={(e) => {
+                  // Missing artwork: show a numbered field marker so the scene still works.
+                  e.currentTarget.replaceWith(Object.assign(document.createElement('span'), { className: 'woodland-marker', textContent: String(scene.objects.indexOf(o) + 1) }));
+                }}
+              />
             </button>
           ))}
         </div>

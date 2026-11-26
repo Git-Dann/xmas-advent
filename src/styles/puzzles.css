@@ -181,7 +181,7 @@
   padding: var(--s-4) var(--s-4);
   border-radius: var(--r-3);
   background: linear-gradient(180deg, #e0c48b, #b8955a 50%, #8a6b30);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 -2px 0 rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.45);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
 }
 
 .lock-group {
@@ -379,15 +379,21 @@
 
 .choices-menu .choice.is-selected {
   background: rgba(100, 29, 53, 0.1);
-  box-shadow: inset 0 0 0 2px var(--maroon);
-  border-radius: var(--r-1);
+}
+
+.choices-menu .choice.is-selected .choice-label {
+  color: var(--maroon);
 }
 
 .choice-ticket {
-  background: var(--paper);
+  position: relative;
+  padding-left: calc(var(--s-4) + 8px);
+  border-radius: 0;
+  background:
+    radial-gradient(circle, rgba(100, 29, 53, 0.38) 1.5px, transparent 1.9px) 8px 0 / 4px 9px repeat-y,
+    var(--paper);
   color: var(--ink);
   box-shadow: var(--shadow-1);
-  border-left: 5px dotted rgba(100, 29, 53, 0.35);
 }
 
 .choice-ticket .choice-label {
@@ -462,15 +468,15 @@
   font-size: 1.25rem;
   font-weight: 700;
   letter-spacing: 0.03em;
-  box-shadow: 0 2px 0 #c8b898, 0 4px 10px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
   cursor: pointer;
   touch-action: none;
   transition: transform var(--t-press) var(--ease-out), opacity var(--t-ui);
 }
 
 .tile:active {
-  transform: translateY(2px);
-  box-shadow: 0 0 0 #c8b898, 0 2px 6px rgba(0, 0, 0, 0.35);
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 
 .tile.is-used {
@@ -1772,7 +1778,9 @@
   padding: 0;
 }
 
-.dial-card legend + * {
+.dial-card legend + *,
+.field-group legend + *,
+.lock legend + * {
   clear: both;
 }
 
@@ -1781,4 +1789,20 @@
   .record-line {
     grid-template-columns: 6.25rem 1fr;
   }
+}
+
+.woodland-marker {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--burgundy);
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  box-shadow: var(--shadow-1);
 }
