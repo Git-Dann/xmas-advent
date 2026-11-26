@@ -27,7 +27,8 @@ export class Harness {
     await writeSetting(this.env, 'test_clock', new Date(iso).toISOString());
   }
 
-  async request(method: string, path: string, body?: unknown, headers: Record<string, string> = {}): Promise<{ status: number; json: any; headers: Headers }> {
+  async request(method: string, path: string, body?: unknown, headers: Record<string, string> = {}): // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Promise<{ status: number; json: any; headers: Headers }> {
     const cookie = [...this.cookies.entries()].map(([k, v]) => `${k}=${v}`).join('; ');
     const init: RequestInit = { method, headers: { ...(cookie ? { cookie } : {}), ...headers } };
     if (body !== undefined) {

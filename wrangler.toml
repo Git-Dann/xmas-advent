@@ -1,0 +1,37 @@
+# Cloudflare Pages configuration for The 25th Key.
+# Top-level values apply to local development and production. [env.preview] applies to every
+# preview deployment. d1_databases, r2_buckets and vars do NOT inherit between environments,
+# so each environment restates them in full.
+#
+# Before the first deploy, Dan creates the resources (see docs/DEPLOYMENT.md) and replaces the
+# REPLACE_WITH_* ids below. Nothing here creates billable resources by itself.
+
+name = "the-25th-key"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-11-01"
+
+[vars]
+ENVIRONMENT = "production"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "the-25th-key"
+database_id = "REPLACE_WITH_PRODUCTION_D1_ID"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "MEDIA"
+bucket_name = "the-25th-key-media"
+
+[env.preview.vars]
+ENVIRONMENT = "preview"
+
+[[env.preview.d1_databases]]
+binding = "DB"
+database_name = "the-25th-key-preview"
+database_id = "REPLACE_WITH_PREVIEW_D1_ID"
+migrations_dir = "migrations"
+
+[[env.preview.r2_buckets]]
+binding = "MEDIA"
+bucket_name = "the-25th-key-media-preview"

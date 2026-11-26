@@ -1,0 +1,5 @@
+{
+  "ui.tap": { "channel": "ui", "files": ["/assets/audio/ui/tap-1.m4a", "/assets/audio/ui/tap-2.m4a", "/assets/audio/ui/tap-3.m4a"], "gain": 0.6 },
+  "ui.error.soft": { "channel": "ui", "files": ["/assets/audio/ui/error-soft-1.m4a"], "gain": 0.5 },
+  "puzzle.correct": { "channel": "narrative", "files": ["/assets/audio/cues/correct-1.m4a"], "gain": 0.8 }
+}

@@ -7,5 +7,5 @@
     "tsBuildInfoFile": "./node_modules/.tmp/app.tsbuildinfo",
     "outDir": "./node_modules/.tmp/app"
   },
-  "include": ["src", "shared"]
+  "include": ["src", "src/**/*.json", "shared"]
 }

@@ -8,6 +8,7 @@ export default defineConfig({
   build: {
     target: 'es2022',
     sourcemap: false,
+    assetsDir: 'static',
     assetsInlineLimit: 2048,
     rollupOptions: {
       output: {

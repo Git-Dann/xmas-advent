@@ -91,7 +91,7 @@ export const DAYS: DayContent[] = [
         title: 'Register of Arrivals',
         caption: 'Water damage has made part of the entry unreadable.',
         fields: [
-          { id: 'r1', label: 'Institution', value: 'E _ _ e   H _ _ l   U n i v e r s i t y' },
+          { id: 'r1', label: 'Institution', value: 'E··e H··l University' },
           { id: 'r2', label: 'Town', value: 'Ormskirk, Lancashire' },
           { id: 'r3', label: 'Entry', value: 'The beginning of a story' },
           { id: 'r4', label: 'Status', value: 'Unfinished' },

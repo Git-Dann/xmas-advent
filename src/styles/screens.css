@@ -1,0 +1,799 @@
+/* ---------- Invitation ---------- */
+.invitation {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: max(var(--s-6), env(safe-area-inset-top)) var(--gutter) max(var(--s-6), env(safe-area-inset-bottom));
+  background:
+    radial-gradient(80% 50% at 50% 0%, rgba(100, 29, 53, 0.45), transparent 70%),
+    radial-gradient(60% 40% at 50% 100%, rgba(32, 59, 48, 0.8), transparent 70%),
+    var(--midnight);
+}
+
+.invitation-card {
+  width: min(100%, 440px);
+  text-align: center;
+  display: grid;
+  justify-items: center;
+  gap: var(--s-2);
+}
+
+.invitation-seal {
+  margin-bottom: var(--s-4);
+  animation: seal-float 6s var(--ease-in-out) infinite;
+}
+
+@keyframes seal-float {
+  50% {
+    transform: translateY(-4px) rotate(-2deg);
+  }
+}
+
+.invitation-title {
+  font-size: var(--step-4);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+.invitation-subtitle {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-1);
+  color: var(--gold);
+}
+
+.invitation-line {
+  margin-top: var(--s-4);
+  font-family: var(--font-display);
+  font-size: var(--step-1);
+  color: var(--mist);
+}
+
+.invitation-form {
+  width: 100%;
+  display: grid;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+  text-align: left;
+}
+
+.invitation-help {
+  font-size: 0.88rem;
+  color: var(--mist-soft);
+  text-align: center;
+}
+
+/* ---------- Screen headers ---------- */
+.screen-header {
+  display: grid;
+  gap: var(--s-2);
+  padding: var(--s-6) 0 var(--s-5);
+  max-width: var(--measure);
+}
+
+.section-title {
+  font-size: var(--step-1);
+  color: var(--ivory);
+  margin: var(--s-6) 0 var(--s-3);
+}
+
+.empty-state {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-3);
+  padding: var(--s-7) var(--s-4);
+  color: var(--mist);
+  text-align: center;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-1);
+  min-height: var(--touch);
+  margin-top: var(--s-2);
+  color: var(--mist);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.back-link:hover {
+  color: var(--gold);
+}
+
+/* ---------- Village ---------- */
+.village-hero {
+  position: relative;
+  margin: 0 calc(-1 * var(--gutter));
+  height: clamp(340px, 58dvh, 560px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.scene-canvas {
+  width: 100%;
+  height: 100%;
+  touch-action: pan-y;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out);
+}
+
+.scene-ready .scene-canvas {
+  opacity: 1;
+}
+
+.village-hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 55%;
+  background: linear-gradient(to bottom, transparent, rgba(16, 29, 24, 0.88) 70%, var(--midnight));
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Non-WebGL fallback: an illustrated night village built from CSS (interface graphics). */
+.village-fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(245, 240, 226, 0.9) 0 2.2%, rgba(245, 240, 226, 0.15) 2.4% 6%, transparent 9%),
+    radial-gradient(1px 1px at 12% 30%, #fff, transparent),
+    radial-gradient(1px 1px at 68% 12%, #fff, transparent),
+    radial-gradient(1px 1px at 82% 28%, #fff, transparent),
+    radial-gradient(1px 1px at 44% 8%, #fff, transparent),
+    linear-gradient(to bottom, #0b1713, #15291f 70%, #1d3529);
+}
+
+.village-fallback::before {
+  content: '';
+  position: absolute;
+  inset: auto 0 22% 0;
+  height: 30%;
+  background:
+    linear-gradient(135deg, transparent 49%, #0e1915 50%) 0 0 / 70px 70px repeat-x,
+    linear-gradient(225deg, transparent 49%, #0e1915 50%) 35px 0 / 70px 70px repeat-x;
+  opacity: 0.9;
+}
+
+.village-fallback::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 24%;
+  background: linear-gradient(to bottom, #dfe7ea, #b9c6c9);
+  border-radius: 50% 50% 0 0 / 18% 18% 0 0;
+}
+
+.village-fallback.is-christmas {
+  background-color: #1d1410;
+}
+
+.village-hero-text {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: var(--s-5);
+  display: grid;
+  gap: var(--s-2);
+  justify-items: start;
+  max-width: 30rem;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.65);
+}
+
+.village-hero-text h1 {
+  font-size: var(--step-4);
+}
+
+.village-cta {
+  margin-top: var(--s-3);
+}
+
+.chapter-seals {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  padding: var(--s-4) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.chapter-seals-link {
+  margin-left: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: var(--touch);
+  font-weight: 600;
+  font-size: 0.92rem;
+  text-decoration: none;
+}
+
+.calendar {
+  padding-top: var(--s-5);
+}
+
+.calendar-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  margin-bottom: var(--s-4);
+}
+
+/* ---------- Doors ---------- */
+.doors {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(6px, 2vw, 14px);
+}
+
+.door-cell-25 {
+  grid-column: 1 / -1;
+}
+
+.door {
+  --frame: #3a271c;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  min-height: 56px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px 6px 3px 3px;
+  background: #0b1511;
+  box-shadow: inset 0 0 0 3px var(--frame), inset 0 0 0 4px rgba(211, 180, 119, 0.2), 0 2px 6px rgba(0, 0, 0, 0.4);
+  perspective: 600px;
+  cursor: pointer;
+  overflow: visible;
+  touch-action: manipulation;
+}
+
+.door-cell-25 .door {
+  aspect-ratio: auto;
+  height: 84px;
+}
+
+.door-light {
+  position: absolute;
+  inset: 4px;
+  border-radius: 3px;
+  background: radial-gradient(circle at 50% 60%, #ffd892, #e7a64c 45%, #7a3d17);
+  opacity: 0;
+  transition: opacity var(--t-object) var(--ease-out);
+}
+
+.door-leaf {
+  position: absolute;
+  inset: 4px;
+  display: grid;
+  place-items: center;
+  border-radius: 3px;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.25)),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 0 46%, transparent 46% 54%, rgba(255, 255, 255, 0.04) 54%),
+    var(--forest);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transform-origin: left center;
+  transition: transform var(--t-object) var(--ease-out), background var(--t-ui);
+  backface-visibility: hidden;
+}
+
+.door-number {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 5vw, 1.9rem);
+  font-weight: 600;
+  color: var(--ivory);
+  line-height: 1;
+  font-variant-numeric: lining-nums;
+}
+
+.door-check {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  color: var(--gold);
+}
+
+.door-key {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: var(--gold);
+}
+
+/* future: dark wood, quiet */
+.door.is-future .door-leaf,
+.door.is-locked .door-leaf {
+  background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.4)), #1a2c24;
+}
+
+.door.is-future .door-number,
+.door.is-locked .door-number {
+  color: var(--mist-soft);
+}
+
+.door.is-future,
+.door.is-locked {
+  cursor: default;
+}
+
+/* available: restrained, inviting gold */
+.door.is-available,
+.door.is-in_progress {
+  --frame: #8a6b30;
+  box-shadow: inset 0 0 0 3px var(--frame), inset 0 0 0 4px rgba(246, 226, 176, 0.45), 0 0 0 1px rgba(211, 180, 119, 0.5), 0 0 22px rgba(230, 204, 149, 0.28);
+  animation: door-breathe 3.2s var(--ease-in-out) infinite;
+}
+
+.door.is-available .door-leaf,
+.door.is-in_progress .door-leaf {
+  background: linear-gradient(rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.2)), var(--maroon);
+}
+
+.door.is-available .door-number,
+.door.is-in_progress .door-number {
+  color: var(--gold-bright);
+}
+
+@keyframes door-breathe {
+  50% {
+    box-shadow: inset 0 0 0 3px var(--frame), inset 0 0 0 4px rgba(246, 226, 176, 0.6), 0 0 0 1px rgba(211, 180, 119, 0.7), 0 0 30px rgba(230, 204, 149, 0.4);
+  }
+}
+
+/* complete: warm light glowing round a slightly ajar door */
+.door.is-complete .door-light {
+  opacity: 1;
+}
+
+.door.is-complete .door-leaf {
+  transform: rotateY(-24deg);
+  background: linear-gradient(rgba(255, 220, 160, 0.05), rgba(0, 0, 0, 0.25)), #2b4d3f;
+}
+
+.door:active:not([aria-disabled='true']) .door-leaf {
+  transform: scale(0.97);
+}
+
+.door.is-complete:active .door-leaf {
+  transform: rotateY(-24deg) scale(0.97);
+}
+
+.door.is-opening .door-light {
+  opacity: 1;
+}
+
+.door.is-opening .door-leaf {
+  transform: rotateY(-100deg);
+  transition-duration: 480ms;
+}
+
+/* ---------- Calendar list ---------- */
+.calendar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.calendar-row {
+  display: grid;
+  grid-template-columns: 2.5rem 1fr auto;
+  align-items: center;
+  gap: var(--s-3);
+  min-height: 60px;
+  padding: var(--s-2) var(--s-3);
+  border-radius: var(--r-2);
+  background: rgba(244, 235, 221, 0.03);
+}
+
+.calendar-row-num {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--mist);
+}
+
+.calendar-row.is-available .calendar-row-num,
+.calendar-row.is-in_progress .calendar-row-num {
+  color: var(--gold);
+}
+
+.calendar-row-body {
+  display: grid;
+}
+
+.calendar-row-title {
+  font-weight: 600;
+}
+
+.calendar-row-state {
+  font-size: 0.85rem;
+  color: var(--mist-soft);
+}
+
+/* ---------- Archive ---------- */
+.tool-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--s-2);
+}
+
+.tool {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-3);
+  align-items: start;
+  padding: var(--s-3) var(--s-4);
+  border-radius: var(--r-2);
+  background: rgba(244, 235, 221, 0.04);
+  box-shadow: inset 0 0 0 1px var(--line);
+}
+
+.tool svg {
+  color: var(--gold);
+  margin-top: 2px;
+}
+
+.tool-title {
+  font-weight: 650;
+}
+
+.evidence-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--s-3);
+}
+
+.evidence-card {
+  width: 100%;
+  min-height: 150px;
+  display: grid;
+  grid-template-rows: 1fr auto auto;
+  justify-items: center;
+  gap: var(--s-1);
+  padding: var(--s-4) var(--s-3) var(--s-3);
+  border: 0;
+  border-radius: var(--r-1);
+  color: var(--ink);
+  background-color: var(--ivory);
+  background-image: linear-gradient(rgba(244, 235, 221, 0.78), rgba(244, 235, 221, 0.78)),
+    image-set(url('/assets/textures/paper-fine.webp') type('image/webp'), url('/assets/textures/paper-fine.jpg') type('image/jpeg'));
+  background-size: cover, 400px;
+  box-shadow: var(--shadow-1);
+  text-align: center;
+  cursor: pointer;
+  transition: transform var(--t-ui) var(--ease-spring), box-shadow var(--t-ui);
+}
+
+.evidence-card:nth-child(odd) {
+  transform: rotate(-0.6deg);
+}
+
+.evidence-card:hover,
+.evidence-card:focus-visible {
+  transform: translateY(-3px) rotate(0deg);
+  box-shadow: var(--shadow-2);
+}
+
+.evidence-card-art {
+  display: grid;
+  place-items: center;
+  color: var(--maroon);
+}
+
+.evidence-card-title {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.evidence-card-day {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.evidence-card.kind-seal {
+  background: radial-gradient(circle at 50% 35%, #2b4d3f, #13241d);
+  color: var(--ivory);
+}
+
+.evidence-card.kind-seal .evidence-card-day {
+  color: var(--mist);
+}
+
+/* ---------- Vault ---------- */
+.vault-illustration,
+.vault-door {
+  display: grid;
+  justify-items: center;
+  gap: var(--s-4);
+  margin: var(--s-4) 0 var(--s-5);
+}
+
+.vault-face {
+  position: relative;
+  width: min(84vw, 340px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 31%, rgba(0, 0, 0, 0.35) 31.5%, transparent 33%),
+    radial-gradient(circle at 35% 30%, #4a4f4c, #2a2f2c 45%, #161a18 80%);
+  box-shadow: inset 0 0 0 10px #1a1e1c, inset 0 0 0 12px rgba(211, 180, 119, 0.35), inset 0 0 50px rgba(0, 0, 0, 0.6), 0 20px 60px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.vault-socket {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  color: rgba(211, 180, 119, 0.45);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(211, 180, 119, 0.25);
+  transform: translate(-50%, -50%);
+}
+
+.vault-socket-star { left: 50%; top: 17%; }
+.vault-socket-moon { left: 83%; top: 50%; }
+.vault-socket-home { left: 50%; top: 83%; }
+.vault-socket-heart { left: 17%; top: 50%; }
+
+.vault-lock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at 35% 30%, #f6e2b0, var(--gold) 40%, #8a6b30);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5), inset 0 0 0 4px rgba(110, 82, 33, 0.45);
+}
+
+.vault-keyhole {
+  width: 16px;
+  height: 36px;
+  background: radial-gradient(circle at 50% 30%, #120c06 7px, transparent 8px), linear-gradient(#120c06, #120c06) 50% 100% / 8px 22px no-repeat;
+}
+
+.vault-key-in {
+  position: absolute;
+  color: #5b431a;
+  transform: rotate(-90deg);
+  transition: transform 0.9s var(--ease-in-out);
+}
+
+.vault-door.is-turning .vault-key-in,
+.vault-door.is-open .vault-key-in {
+  transform: rotate(0deg);
+}
+
+.vault-light {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 214, 140, 0.95), rgba(255, 170, 80, 0.4) 40%, transparent 70%);
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 1.4s var(--ease-out), transform 1.6s var(--ease-out);
+  pointer-events: none;
+}
+
+.vault-door.is-open .vault-light {
+  opacity: 1;
+  transform: scale(1.6);
+}
+
+.christmas-key-token {
+  display: grid;
+  place-items: center;
+  width: 88px;
+  height: 88px;
+  border: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(211, 180, 119, 0.25), transparent 70%);
+  color: var(--gold);
+  cursor: grab;
+  touch-action: none;
+  filter: drop-shadow(0 4px 14px rgba(211, 180, 119, 0.5));
+  animation: seal-float 4s var(--ease-in-out) infinite;
+}
+
+.vault-status {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--s-5);
+  display: grid;
+  gap: var(--s-2);
+  color: var(--mist);
+}
+
+.vault-status li {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.vault-status svg {
+  color: var(--gold);
+}
+
+.vault-illustration.has-key .vault-lock {
+  box-shadow: 0 0 0 2px var(--gold-bright), 0 0 40px rgba(230, 204, 149, 0.5);
+}
+
+/* ---------- Christmas Room ---------- */
+.shell-christmas {
+  background: radial-gradient(90% 60% at 50% 20%, rgba(255, 170, 80, 0.16), transparent 70%), #120d0b;
+}
+
+.christmas-scene {
+  position: relative;
+  margin: 0 calc(-1 * var(--gutter));
+  height: clamp(300px, 52dvh, 520px);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.christmas-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(255, 190, 110, 0.25), transparent 60%);
+  animation: glow-in 3s var(--ease-out) both;
+  pointer-events: none;
+}
+
+@keyframes glow-in {
+  from {
+    opacity: 0;
+  }
+}
+
+.christmas-letter {
+  position: relative;
+  z-index: 2;
+  max-width: 40rem;
+  margin: -90px auto 0;
+  padding: var(--s-6) var(--s-5);
+  animation: letter-rise 1.4s var(--ease-out) 0.6s both;
+}
+
+.christmas-letter h1 {
+  color: var(--maroon);
+  font-size: var(--step-3);
+  margin-bottom: var(--s-4);
+}
+
+.christmas-body p {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  line-height: 1.5;
+  animation: line-in 1s var(--ease-out) both;
+}
+
+.christmas-signature {
+  margin-top: var(--s-5);
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--maroon);
+}
+
+.christmas-media {
+  display: grid;
+  gap: var(--s-4);
+  margin-top: var(--s-5);
+}
+
+.christmas-photo img {
+  border-radius: var(--r-1);
+  box-shadow: var(--shadow-1);
+  border: 8px solid #fff;
+}
+
+.christmas-media figcaption {
+  margin-top: var(--s-2);
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.christmas-closing {
+  display: flex;
+  align-items: center;
+  gap: var(--s-3);
+  margin-top: var(--s-6);
+  padding-top: var(--s-4);
+  border-top: 1px solid var(--paper-line);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--burgundy);
+}
+
+.christmas-closing svg {
+  color: var(--maroon);
+  flex: none;
+}
+
+.christmas-after {
+  max-width: 40rem;
+  margin: var(--s-5) auto 0;
+  text-align: center;
+}
+
+@keyframes letter-rise {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+}
+
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+/* ---------- Settings ---------- */
+.settings-group {
+  display: grid;
+  gap: var(--s-4);
+  padding-bottom: var(--s-5);
+  border-bottom: 1px solid var(--line);
+  max-width: var(--measure);
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-3);
+  min-height: var(--touch);
+  font-weight: 600;
+}
+
+@media (min-width: 760px) {
+  .doors {
+    gap: 16px;
+  }
+
+  .door-cell-25 {
+    grid-column: 3;
+  }
+
+  .door-cell-25 .door {
+    aspect-ratio: 3 / 4;
+    height: auto;
+  }
+
+  .village-hero {
+    margin: 0;
+    border-radius: 0 0 var(--r-3) var(--r-3);
+  }
+}

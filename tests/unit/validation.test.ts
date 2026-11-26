@@ -35,7 +35,7 @@ describe('normaliseCode', () => {
 
 describe('parseDayMonth', () => {
   it.each([
-    ['1 December', 1, 12], ['1st December', 1, 12], ['December 1', 12 && 1, 12], ['01/12', 1, 12], ['1/12', 1, 12],
+    ['1 December', 1, 12], ['1st December', 1, 12], ['December 1', 1, 12], ['01/12', 1, 12], ['1/12', 1, 12],
     ['01/12/2016', 1, 12], ['1.12', 1, 12], ['30 September', 30, 9], ['30/09', 30, 9], ['30th of September', 30, 9], ['Sept 30', 30, 9],
   ])('parses %s', (text, day, month) => {
     expect(parseDayMonth(text)).toEqual({ day, month });
